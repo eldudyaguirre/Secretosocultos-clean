@@ -1,0 +1,102 @@
+{% load static %}
+
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Secretos Ocultos - Ingreso</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/iconblanco.png' %}">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/form-login.css' %}">
+
+</head>
+<!-- CSS here -->
+
+
+<body>
+    <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <!-- preloader -->
+    <div id="preloader">
+        <div class="preloader">
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <!-- preloader end  -->
+
+    <header id="top-menu">
+        <a href="{% url 'home' %}" class="logo"></a>
+    </header>
+
+    <div class="wrapper"> 
+        <div class="login-box"> 
+            <div class="login-header"> 
+                <span>Iniciar Sesión</span>
+            </div> 
+            <form method="POST" action="{% url 'signin' %}"> 
+                {% csrf_token %}
+                <div class="input-box"> 
+                    <input type="text" id="user" name="username" class="input-field" placeholder=""> 
+                    <label for="user" class="label">Usuario</label> 
+                    <i class="fa-solid fa-user"></i> 
+                </div> 
+                <div class="input-box">
+                    <input type="password" id="pass"  name="password" class="input-field" placeholder=""> 
+                    <label for="pass" class="label">Contraseña</label> 
+                    <i class="fa-solid fa-lock"></i>
+                </div> 
+                <div class="remember-forgot"> 
+                    <label><input type="checkbox">Recuerdame</label> 
+                    <a href="{% url 'resetpassword' %}">Recuperar contraseña ?</a> 
+                </div> 
+                <div class="input-box"> 
+                    <input type="submit" class="input-submit" value="Ingresar"> 
+                </div> 
+                <div class="register">
+                    <span> No tienes cuenta ? <a href="{% url 'signup' %}">Registro</span> 
+                    </div> 
+            </form> 
+        </div> 
+    </div>
+
+<footer id="footer">
+    <a href="{% url 'tienda' %}" class="footer-logo" viewBox="0 0 100 100"></a>
+</footer>
+
+<!-- JS here -->
+<script src="{% static 'js/vendor/modernizr-3.5.0.min.js' %}"></script>
+<script src="{% static 'js/vendor/jquery-1.12.4.min.js' %}"></script>
+<script src="{% static 'js/popper.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+<script src="{% static 'js/slick.min.js' %}"></script>
+<script src="{% static 'js/jquery.meanmenu.min.js' %}"></script>
+<script src="{% static 'js/metisMenu.min.js' %}"></script>
+<script src="{% static 'js/jquery.nice-select.js' %}"></script>
+<script src="{% static 'js/ajax-form.js' %}"></script>
+<script src="{% static 'js/wow.min.js' %}"></script>
+<script src="{% static 'js/jquery.counterup.min.js' %}"></script>
+<script src="{% static 'js/waypoints.min.js' %}"></script>
+<script src="{% static 'js/jquery.scrollUp.min.js' %}"></script>
+<script src="{% static 'js/imagesloaded.pkgd.min.js' %}"></script>
+<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+<script src="{% static 'js/jquery.easypiechart.js' %}"></script>
+<script src="{% static 'js/tilt.jquery.js' %}"></script>
+<script src="{% static 'js/plugins.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+
+</body>
+</html>

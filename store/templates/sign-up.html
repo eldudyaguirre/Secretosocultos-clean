@@ -1,0 +1,118 @@
+{% load static %}
+
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Secretos Ocultos - Registro</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/iconblanco.png' %}">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/form-signup.css' %}">
+
+</head>
+
+<body>
+    <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <!-- preloader -->
+    <div id="preloader">
+        <div class="preloader">
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <!-- preloader end  -->
+
+    <header id="top-menu">
+        <a href="{% url 'home' %}" class="logo"></a>
+    </header>
+
+    <div class="wrapper"> 
+        <div class="signup-box"> 
+            <div class="signup-header"> 
+                <span>Registro</span>
+            </div> 
+            {% if form.errors %}
+                <div class="alert error">
+                    {% for field in form %}
+                        {% for error in field.errors %}
+                            <p>{{ error }}</p>
+                        {% endfor %}
+                    {% endfor %}
+                </div>
+            {% endif %}
+            <form method="POST">
+                {% csrf_token %} 
+                <div class="input-box"> 
+                    <input type="text" id="names" name="first_name" class="input-field" placeholder="" required> 
+                    <label for="names" class="label">Nombres</label> 
+                </div> 
+
+                <div class="input-box"> 
+                    <input type="text" id="surnames" name="last_name" class="input-field" placeholder="" required> 
+                    <label for="surnames" class="label">Apellidos</label> 
+                </div> 
+
+                <div class="input-box"> 
+                    <input type="email" id="email" name="email" class="input-field" placeholder="" required> 
+                    <label for="email" class="label">Email</label> 
+                </div> 
+                
+            <div class="input-box"> 
+                <input type="text" id="user" name="username" class="input-field" placeholder="" required> 
+                <label for="user" class="label">Usuario</label> 
+                <i class="fa-solid fa-user"></i> 
+            </div> 
+            <div class="input-box">
+                <input type="password" id="pass" name="password1" class="input-field" placeholder="" required> 
+                <label for="pass" class="label">Contraseña</label> 
+                <i class="fa-solid fa-lock"></i>
+            </div> 
+            <div class="input-box">
+                <input type="password" id="pass2" name="password2" class="input-field" placeholder="" required>
+                <label for="pass2" class="labelw">Confirmar contraseña</label>
+                <i class="fa-solid fa-lock"></i>
+            </div>
+            <div class="remember-forgot"> 
+                <label><input type="checkbox" name="remember-forgot" required> Acepto términos y condiciones</label> 
+            </div> 
+            <div class="chk-notifications">
+                <label><input type="checkbox" name="acepta_boletin" required> Acepto recibir boletines</label>
+            </div>
+            <div class="input-box"> 
+                <input 
+                    type="submit"
+                    class="input-submit"
+                    value="Registrar"
+                    id="btn-register"
+                > 
+            </div>
+            <div class="register">
+                <span> Ya tienes una cuenta ? <a href="{% url 'signin' %}">Iniciar Sesión</span> 
+                </div> 
+            </form> 
+        </div> 
+    </div>
+
+<script>
+document.querySelector("form").addEventListener("submit", function () {
+    const btn = document.getElementById("btn-register");
+    btn.value = "Registrando...";
+    btn.disabled = true;
+});
+</script>
+
+</body>
+
+</html>

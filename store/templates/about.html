@@ -1,0 +1,553 @@
+{% load static %}
+
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Secretos Ocultos - Acerca de Nosotros </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/iconblanco.png' %}">
+
+ <!-- CSS here -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+ <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+ <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+ <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+ <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+ <link rel="stylesheet" href="{% static 'css/all.min.css' %}">
+ <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+ <link rel="stylesheet" href="{% static 'css/font.css' %}">
+ <link rel="stylesheet" href="{% static 'css/themify-icons.css' %}">
+ <link rel="stylesheet" href="{% static 'css/metisMenu.css' %}">
+ <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
+ <link rel="stylesheet" href="{% static 'css/slick.css' %}">
+ <link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+
+<body>
+    <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <!-- preloader -->
+    <div id="preloader">
+        <div class="preloader">
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <!-- preloader end  -->
+    <!-- header-area start -->
+    <header id="top-menu">
+        <div class="main-header-area main-head-02">
+                {% if user.is_authenticated %}
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-xl-2 col-lg-2 col-md-4 col-4">
+                        <div class="logo">
+                            <a class="logo-img" href="{% url 'home' %}"><img src="{% static 'img/logo/header-logo-azul-vertical.png' %}"
+                                    alt=""></a>
+                        </div>
+                    </div>
+                </div>
+                {% else %}
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-xl-2 col-lg-2 col-md-4 col-4">
+                        <div class="logo">
+                            <a class="logo-img" href="{% url 'home' %}"><img src="{% static 'img/logo/header-logo-azul-vertical.png' %}"
+                                    alt=""></a>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </header>
+    <!-- header-area end -->
+
+    <main>
+        
+        <!--page-title-area start-->
+        <section class="page-title-area" style="background-image:url('{% static 'img/bg/bg-about-1.jpg' %}')">
+            <div class="right-border-shape">
+                <img src="{% static 'img/shape/02.png' %}" alt="">
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6 offset-xl-3">
+                        <div class="page-title-wrapper text-center">
+                            <h1 class="page-title wow fadeInUp2 animated" data-wow-delay='.1s'>Acerca de Nosotros</h1>
+                            <div class="breadcrumb">
+                                <ul class="breadcrumb-list wow fadeInUp2 animated" data-wow-delay='.3s'>
+                                    {% if user.is_authenticated %}
+                                    <li><a href="{% url 'homein' %}">Inicio<i class="far fa-chevron-right"></i></a></li>
+                                    {% else %}
+                                    <li><a href="{% url 'home' %}">Inicio<i class="far fa-chevron-right"></i></a></li>
+                                    {% endif %}
+                                    <li><a class="active" href="#">Acerca de</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--page-title-area area-->
+        <!--about-us-area start-->
+        <section class="about-us-area-03 pt-130 pb-85">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-5 col-lg-6 col-md-12">
+                        <div class="about-img mb-50">
+                            <div class="about-img__thumb wow fadeInUp2 animated" data-wow-delay='.1s'>
+                                <img src="{% static 'img/about/About-01.jpg' %}" alt="">
+                            </div>
+                            <div class="about-img__style-shape wow fadeInUp2 animated" data-wow-delay='.4s'>
+                                <img src="{% static 'img/shape/07.png' %}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-7 col-lg-6 col-md-12">
+                        <div class="about__wrapper about__wrap__03 pl-65 wow fadeInUp2 animated" data-wow-delay='.3s'>
+                            <div class="section-title text-left mb-35">
+                                <h6 class="left-line pl-75">¿Quienes Somos?</h6>
+                                <h2>Bienvenido/a a este espacio donde la magia vive<br>
+                                    <span>la energía fluye y tu espíritu</span></h2>
+                            </div>
+                            <div class="partner-list d-sm-flex align-items-center mb-30">
+                                <div class="total-client">
+                                    <h4><span>encuentra </span> un camino.</h4>
+                                </div>
+                                <div class="joint-btn ml-15">
+                                    <a href="{% url 'signup' %}" class="theme_btn theme_btn2 ">Unete a Nosotros<i
+                                            class="far fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                            <p>Somos un espacio dedicado al bienestar espiritual, la magia ancestral 
+                                y la energía que nos conecta con el universo. Nacimos del deseo de 
+                                compartir herramientas sagradas y conocimientos que ayuden a cada 
+                                persona a encontrar equilibrio, claridad y protección en su camino.
+                                <br>
+                                <br>
+                                Creemos en el poder de los rituales, la vibración de los cristales, 
+                                la sabiduría de las hierbas y la fuerza de la intuición. Por eso 
+                                seleccionamos cada producto con intención y respeto, trabajando siempre 
+                                desde la ética, la autenticidad y el amor por lo que hacemos.
+                                <br>
+                                <br>
+                                Nuestra misión es acompañarte en tu proceso personal —ya sea que busques 
+                                armonía, apertura espiritual, sanación o simplemente un amuleto que te 
+                                recuerde tu propio poder interior.
+                                <br>
+                                <br>
+                                En Secretos Ocultos, la magia eres tú. Nosotros solo ponemos las 
+                                herramientas en tus manos.</p>
+                            <a href="{% url 'contactanos' %}"class="theme_btn theme_btn_bg mt-25">Consigue una Cotización <i
+                                class="far fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--about-us-area end-->
+        <!--feature-project-area start-->
+        <section class="about-feature-project pb-25">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 col-md-12">
+                        <div class="about__wrapper feature__wrapper mb-30 wow fadeInUp2 animated" data-wow-delay='.1s'>
+                            <div class="section-title text-left mb-25">
+                                <h6 class="left-line pl-75">Resultados Reales</h6>
+                                <h2>Cumplir tus Metas<br>
+                                <span>es nuestro objetivo.</span></h2>
+                            </div>
+                            <p>Por eso trabajamos con herramientas energéticas auténticas, rituales conscientes y 
+                                guías espirituales que buscan armonizar tu camino. Cada producto y orientación está 
+                                pensado para acompañarte con intención, respeto y propósito, ayudándote a atraer claridad,
+                                 equilibrio y manifestaciones reales en tu vida.</p>
+                            <p> Parte de nuestros servicios son:</p>
+                            <div class="row">
+                                <div class="col-xl-6 col-lg-6 col-md-6 wow fadeInUp2 animated" data-wow-delay='.2s'>
+                                    <div class="single-feature mb-30">
+                                        <div class="single-feature__icon mr-20">
+                                            <i class="flaticon-vector-rituales"></i>
+                                        </div>
+                                        <div class="single-feature__content">
+                                            <h5><a href="{% url 'rituales' %}">Rituales</a></h5>
+                                            <p>Amarres, limpias, desbloqueos.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 wow fadeInUp2 animated" data-wow-delay='.3s'>
+                                    <div class="single-feature mb-30">
+                                        <div class="single-feature__icon mr-20">
+                                            <i class="flaticon-vector-talisman"></i>
+                                        </div>
+                                        <div class="single-feature__content">
+                                            <h5><a href="{% url 'talismanes' %}">Artículos</a></h5>
+                                            <p>Amuletos, Manillas, Collares, Estatuillas</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 wow fadeInUp2 animated" data-wow-delay='.4s'>
+                                    <div class="single-feature mb-30">
+                                        <div class="single-feature__icon mr-20">
+                                            <i class="flaticon-vector-tarot"></i>
+                                        </div>
+                                        <div class="single-feature__content">
+                                            <h5><a href="{% url 'tarot' %}">Tarot</a></h5>
+                                            <p>Lectura de cartas y energías.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 wow fadeInUp2 animated" data-wow-delay='.8s'>
+                                    <div class="single-feature mb-30">
+                                        <div class="single-feature__icon mr-20">
+                                            <i class="flaticon-vector-ojologoverde"></i>
+                                        </div>
+                                        <div class="single-feature__content">
+                                            <h5><a href="{% url 'rituales' %}">Consejería</a></h5>
+                                            <p>Todo lo que necesitas saber en el tema espiritual.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-12">
+                        <div class="about-img feature__img__box pl-65 mb-50 wow fadeInUp2 animated" data-wow-delay='.3s'>
+                            <div class="about-img__thumb">
+                                <img src="{% static 'img/project/project-02.jpg' %}" alt="">
+                            </div>
+                            <div class="about-img__style-shape">
+                                <img src="{% static 'img/shape/07.png' %}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--feature-project-area end-->
+         <!--counter-area start-->
+         <section class="counter-area heding-bg pt-130 pb-95" style="background-image: url('{% static 'img/bg/02c.png' %}');">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6">
+                        <div class="counetrs mb-30 wow fadeInUp2 animated" data-wow-delay='.1s'>
+                            <div class="counetrs__icon mb-30"><i class="far fa-shopping-cart"></i></div>
+                            <h1><span class="counter">215</span>+</h1>
+                            <p>Productos disponibles</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6">
+                        <div class="counetrs mb-30 wow fadeInUp2 animated" data-wow-delay='.2s'>
+                            <div class="counetrs__icon mb-30"><i class="fal fa-users"></i></div>
+                            <h1><span class="counter">3</span>k</h1>
+                            <p>Clientes satisfechos</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6">
+                        <div class="counetrs mb-30 wow fadeInUp2 animated" data-wow-delay='.3s'>
+                            <div class="counetrs__icon mb-30"><i class="far fa-transporter-3"></i></div>
+                            <h1><span class="counter">5</span>k</h1>
+                            <p>Protecciones ejecutadas</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6">
+                        <div class="counetrs mb-30 wow fadeInUp2 animated" data-wow-delay='.4s'>
+                            <div class="counetrs__icon mb-30"><i class="far fa-hands-helping"></i></div>
+                            <h1><span class="counter">3</span>+</h1>
+                            <p>Guías Activos</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--counter-area end-->
+        <!--team-area start-->
+        <section class="team-area pt-125 pb-100">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-10 offset-xl-1">
+                        <div class="section-title text-center mb-70 wow fadeInUp2 animated" data-wow-delay='.1s'>
+                            <h6 class="left-line pl-75 pr-75">Conoce a Nuestros Guías</h6>
+                            <h2>Eleva tu camino espiritual <br>
+                                <span>con nuestros maestros energéticos </span></h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp2 animated" data-wow-delay='.3s'>
+                        <div class="team text-center mb-30">
+                            <div class="team__thumb mb-25 pos-rel">
+                                <div class="team-avatar">
+                                    <img src="{% static 'img/team/02.jpg' %}" alt="">
+                                </div>
+                                <a class="msg-me" href="https://api.whatsapp.com/send/?phone=593986514121&text=Quiero%20m%C3%A1s%20informaci%C3%B3n%20de%20Secretos%20Ocultos"><i class="fab fa-whatsapp"></i></a>
+                            </div>
+                            <div class="team__content">
+                                <p>Resandera</p>
+                                <h5><a href="#">Isis</a></h5>
+                                <a class="more_btn" href="#"><i class="far fa-plus"></i></a>
+                                <ul class="team__social mt-10">
+                                    <li>
+                                        <a href="https://www.facebook.com/isis.osiris.90281">
+                                            <i class="fab fa-facebook-f"></i>
+                                            <i class="fab fa-facebook-f"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.instagram.com/secretosocultos.tarot?igsh=bWZzN3pmeDdjem0z">
+                                            <i class="fab fa-instagram"></i>
+                                            <i class="fab fa-instagram"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.tiktok.com/@jonas_tarot">
+                                            <i class="fa-brands fa-tiktok"></i>
+                                            <i class="fa-brands fa-tiktok"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="mailto:secretos_ocultos@gmail.com">
+                                            <i class="far fa-envelope"></i>
+                                            <i class="far fa-envelope"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp2 animated" data-wow-delay='.7s'>
+                        <div class="team text-center mb-30">
+                            <div class="team__thumb mb-25 pos-rel">
+                                <div class="team-avatar">
+                                    <img src="{% static 'img/team/01.jpg' %}" alt="">
+                                </div>
+                                <a class="msg-me" href="https://api.whatsapp.com/send/?phone=593994100111&text=Quiero%20m%C3%A1s%20informaci%C3%B3n%20de%20Secretos%20Ocultos"><i class="fab fa-whatsapp"></i></a>
+                            </div>
+                            <div class="team__content">
+                                <p>Consejero Espiritual</p>
+                                <h5><a href="#">Jonas Dante</a></h5>
+                                <a class="more_btn" href="#"><i class="far fa-plus"></i></a>
+                                <ul class="team__social mt-10">
+                                    <li>
+                                        <a href="https://www.facebook.com/jonas.dante.5">
+                                            <i class="fab fa-facebook-f"></i>
+                                            <i class="fab fa-facebook-f"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.instagram.com/tienda.esoterismo?igsh=YW4wcnM4bW82dnVu">
+                                            <i class="fab fa-instagram"></i>
+                                            <i class="fab fa-instagram"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.tiktok.com/@jonas_tarot">
+                                            <i class="fa-brands fa-tiktok"></i>
+                                            <i class="fa-brands fa-tiktok"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="mailto:secretos_ocultos@gmail.com">
+                                            <i class="far fa-envelope"></i>
+                                            <i class="far fa-envelope"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp2 animated" data-wow-delay='.9s'>
+                        <div class="team text-center mb-30">
+                            <div class="team__thumb mb-25 pos-rel">
+                                <div class="team-avatar">
+                                    <img src="{% static 'img/team/03.jpg' %}" alt="">
+                                </div>
+                                <a class="msg-me" href="https://api.whatsapp.com/send/?phone=573185129159&text=Quiero%20m%C3%A1s%20informaci%C3%B3n%20de%20Secretos%20Ocultos"><i class="fab fa-whatsapp"></i></a>
+                            </div>
+                            <div class="team__content">
+                                <p>Magia Roja</p>
+                                <h5><a href="#">Cataleya</a></h5>
+                                <a class="more_btn" href="#"><i class="far fa-plus"></i></a>
+                                <ul class="team__social mt-10">
+                                    <li>
+                                        <a href="https://www.facebook.com/venus.dante.56">
+                                            <i class="fab fa-facebook-f"></i>
+                                            <i class="fab fa-facebook-f"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.instagram.com/cataleya_tarot_espiritual?igsh=d28xbWF2ZDh6Z2Jr">
+                                            <i class="fab fa-instagram"></i>
+                                            <i class="fab fa-instagram"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.tiktok.com/@jonas_tarot">
+                                            <i class="fa-brands fa-tiktok"></i>
+                                            <i class="fa-brands fa-tiktok"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="mailto:secretos_ocultos@gmail.com">
+                                            <i class="far fa-envelope"></i>
+                                            <i class="far fa-envelope"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--team-area end-->
+  <!--donation-area start-->
+  <section class="donation-area pt-125 pb-100" style="background-image:url('{% static 'img/events/Events-01.jpg' %}')">
+      <div class="container">
+          <div class="row">
+              <div class="col-xl-8 offset-xl-2">
+                  <div class="donation-wrapper">
+                      <div class="section-title white-title text-center mb-40 wow fadeInUp2 animated"
+                          data-wow-delay='.1s'>
+                          <h6 class="left-line pl-75 pr-75">Tenemos todas las</h6>
+                          <h2>Técnicas y herramientas<br>
+                              <span>para manifestar tus intenciones.</span></h2>
+                      </div>
+                      <ul class="btn-list text-center mb-30 wow fadeInUp2 animated" data-wow-delay='.3s'>
+                          <li><a class="theme_btn theme_btn_bg" href="{% url 'tienda' %}"
+                                  data-animation="fadeInLeft" data-delay=".7s">Saber más<i
+                                      class="far fa-arrow-right"></i></a>
+                          </li>
+                          <li><a class="theme_btn theme-border-btn" href="{% url 'contactanos' %}"
+                                  data-animation="fadeInLeft" data-delay=".7s">donar ahora<i
+                                      class="far fa-arrow-right"></i></a>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  <!--donation-area end-->
+
+    <!--cta-area start-->
+    <section class="cta-area theme-bg pt-55 pb-25">
+        <div class="container">
+            <div class="row align-items-md-center">
+                <div class="col-xl-9 col-lg-9 col-md-8">
+                    <div class="cta-wrapper wow fadeInUp2 animated" data-wow-delay='.1s'>
+                        <div class="section-title mb-30">
+                            <h2>Quiere ser un cliente <b>Premium</b>?</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-4">
+                    <div class="cta-wrapper">
+                        <div class="cta-btn text-md-right wow fadeInUp2 animated" data-wow-delay='.1s'>
+                            <a class="theme_btn theme_btn_bg" href="{% url 'contactanos' %}">contactanos <i
+                                class="far fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--cta-area end-->
+  </main>
+<!--footer-area start-->
+<footer class="footer-area heding-bg pos-rel pt-100" style="background-image:url('{% static 'img/bg/02a.png' %}')">
+  <div class="container">
+      <div class="footer-bottom-area">
+          <div class="row mb-30">
+              <div class="col-xl-2 col-lg-3 col-md-6  wow fadeInUp2 animated" data-wow-delay='.1s'>
+                  <div class="footer__widget mb-30">
+                      <h5 class="semi-title mb-25">Accesos Rápidos</h5>
+                      <ul class="fot-list">
+                          <li><a href="{% url 'about' %}">Acerca de</a></li>
+                          <li><a href="{% url 'tienda' %}">Nuestros Servicios</a></li>
+                          <li><a href="#">Tips & Blog</a></li>
+                          <li><a href="{% url 'contactanos' %}">Contactanos</a></li>
+                      </ul>
+                  </div>
+              </div>
+              <div class="col-xl-4 col-lg-6 col-md-6  wow fadeInUp2 animated" data-wow-delay='.5s'>
+                  <div class="footer__widget mb-25 pl-85">
+                      <h5 class="semi-title mb-25">Secretos Ocultos</h5>
+                      <p class="mb-10">Tienda Esotérica Online, velas, amuletos, escencias,
+                        lectura de tarot, limpias y más.
+                      </p>
+                      <ul class="fot-list address-list">
+                          <li><a href="#"><i class="far fa-map-marker-alt"></i> Av. de las Américas 3-111, Cuenca - Ecuador</a></li>
+                          <li><a href="mailto:secretos_ocultos@gmail.com"><i class="far fa-envelope"></i> secretos_ocultos@gmail.com</a></li>
+                          <li><a href="https://api.whatsapp.com/send/?phone=593994100111&text=Quiero%20m%C3%A1s%20informaci%C3%B3n%20de%20Secretos%20Ocultos"><i class="fab fa-whatsapp"></i> (+593) 994 100 111</a></li>
+                      </ul>
+                  </div>
+              </div>
+              <div class="col-xl-4 col-lg-6 col-md-6  wow fadeInUp2 animated" data-wow-delay='.7s'>
+                  <div class="footer__widget fot_abot mb-30 pl-85">
+                      <h5 class="semi-title mb-25">Apoyanos</h5>
+                      <p class="mb-30">Esta Web tiene autogestión por lo que 
+                          tus aportes son necesasrias para seguir funcionando.</p>
+                          <div class="subscribe-content foter-subscribe">
+                              <form class="subscribe-form" action="{% static 'mail.php' %}">
+                                  <input class="form-control" type="text" placeholder="Ingresa tu Email">
+                                  <button><i class="far fa-arrow-right"></i></button>
+                              </form>
+                          </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!--scroll-target-btn-->
+      <div class="copy-right-area pt-30">
+          <div class="row align-items-center">
+              <div class="col-xl-7 col-lg-7 col-md-6">
+                  <div class="footer-log mb-30">
+                      <a href="{% url 'home' %}" class="footer-logo mb-30"><img src="{% static 'img/logo/footer-logo1.png' %}"
+                          alt=""></a>
+                  </div>
+              </div>
+              <div class="col-xl-5 col-lg-5 col-md-6">
+                  <div class="copyright mb-30 text-md-right">
+                      <p>© Imashuti 2025 - Todos los Derechos Reservados</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</footer>
+<!--footer-area end-->
+
+
+<!-- JS here -->
+<script src="{% static 'js/vendor/modernizr-3.5.0.min.js' %}"></script>
+<script src="{% static 'js/vendor/jquery-1.12.4.min.js' %}"></script>
+<script src="{% static 'js/popper.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+<script src="{% static 'js/slick.min.js' %}"></script>
+<script src="{% static 'js/jquery.meanmenu.min.js' %}"></script>
+<script src="{% static 'js/metisMenu.min.js' %}"></script>
+<script src="{% static 'js/jquery.nice-select.js' %}"></script>
+<script src="{% static 'js/ajax-form.js' %}"></script>
+<script src="{% static 'js/wow.min.js' %}"></script>
+<script src="{% static 'js/jquery.counterup.min.js' %}"></script>
+<script src="{% static 'js/waypoints.min.js' %}"></script>
+<script src="{% static 'js/jquery.scrollUp.min.js' %}"></script>
+<script src="{% static 'js/imagesloaded.pkgd.min.js' %}"></script>
+<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+<script src="{% static 'js/jquery.easypiechart.js' %}"></script>
+<script src="{% static 'js/tilt.jquery.js' %}"></script>
+<script src="{% static 'js/plugins.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>

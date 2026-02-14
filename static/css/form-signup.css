@@ -1,0 +1,320 @@
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/Poppins-Regular.ttf');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+body {
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('../img/bg/signup-sm-01.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+#top-menu {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+    z-index: 10;
+}
+
+.header-inner {
+    width: 370px;              /* mismo ancho que .login-box */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#top-menu .logo {
+    display: block;
+    width: 180px;
+    height: 70px;
+     margin-left: 80px;
+    background-color: white;
+    mask: url("../img/logo/logo-blanco-vertical.svg")no-repeat center;
+    -webkit-mask: url('../img/logo/logo-blanco-vertical.svg') no-repeat center;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+#top-menu .logo:hover {
+    background-color: #fff;
+    opacity: 0.65;
+}
+
+
+.wrapper {
+    margin: 0px auto 0 auto;
+    position: relative;
+    width: 300px;
+    height: 420px;
+    display: flex;
+    background: transparent;
+    border-radius: 10px;
+}
+
+.wrapper .signup-box {
+    position: absolute;
+    background: transparent;
+    border: 3px solid #fff;
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    display: flex;
+    flex-direction: column;
+    padding: 50px 50px;
+    z-index: 2;
+    width: 370px;
+    height: 510px;
+    margin: 5px;
+}
+
+.wrapper .signup-box .signup-header {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    width: 160px;
+    height: 50px;
+    border-radius: 0 0 20px 20px;
+
+}
+
+.signup-header {
+    font-size: 20px;
+    color: #161a29;
+}
+
+.signup-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -30px;
+    width: 30px;
+    height: 30px;
+    border-top-right-radius: 50%;
+    background: transparent;
+    box-shadow: 15px 0 0 0 #fff;
+}
+
+.signup-header::after {
+    content: ''; 
+    position: absolute; 
+    top:0; 
+    right: -30px; 
+    width: 30px; 
+    height: 30px; 
+    border-top-left-radius: 50%; 
+    background: transparent; 
+    box-shadow: -15px 0 0 0 #fff;
+}
+
+form {
+    margin-top: 10px; 
+    margin-left: -30px; 
+}
+.input-box {
+    position: relative; 
+    padding: 8px; 
+    display: flex; 
+    justify-content: center; 
+    flex-direction: column; 
+    width: 330px;
+}
+
+.input-field {
+    font-size: 14px; 
+    background: transparent; 
+    color: #fff; 
+    padding: 7px; 
+    border: 2px solid #fff; 
+    border-radius: 30px; 
+    outline: none; 
+    z-index: 1;
+}
+
+input[type="text"], 
+input[type="password"] { 
+    padding-left: 20px;
+}
+
+#user {
+    margin-bottom: 10px;
+}
+
+.label {
+    position: absolute; 
+    display: inline-block;
+    top: 15px; 
+    left: 30px; 
+    transition: .2s; 
+    color: #fff;
+    white-space: nowrap;
+
+}
+
+.labelw {
+    position: absolute; 
+    display: inline-block;
+    top: 15px; 
+    left: 30px; 
+    transition: .2s; 
+    color: #fff;
+    white-space: nowrap;
+
+}
+
+i {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #fff;
+}
+
+.input-field:focus ~ .label, 
+.input-field:valid .label { 
+    position: absolute; 
+    top: 0; 
+    left: 30px; 
+    font-size: 14px; 
+    background-color: #fff; 
+    color: #161a29; 
+    width: 30%; 
+    text-align: center; 
+    border-radius: 30px; 
+    z-index: 10;
+}
+
+.input-field:focus ~ .labelw, 
+.input-field:valid .labelw { 
+    position: absolute; 
+    top: 0; 
+    left: 30px; 
+    font-size: 14px; 
+    background-color: #fff; 
+    color: #161a29; 
+    width: 50%; 
+    text-align: center; 
+    border-radius: 30px; 
+    z-index: 10;
+}
+
+.input-field:not(:placeholder-shown):not(:focus) + .label {
+    top: 0; 
+    left: 30px; 
+    font-size: 14px; 
+    background-color: #fff; 
+    color: #161a29; 
+    width: 30%; 
+    text-align: center; 
+    border-radius: 30px; 
+    z-index: 10;
+}
+
+
+.input-submit {
+    font-size: 16px;
+    background-color: #fff;
+    color: #161a29;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 6px;
+    border: none;
+    border-radius: 30px;
+    box-shadow: 3px 3px 30px #fff;
+    outline: none;
+    cursor: pointer;
+}
+
+.input-submit:hover {
+    background-color: #f4b342 ;
+    color: #fff;
+    box-shadow: 5px 5px 50px #face68;
+
+}
+
+.remember-forgot {
+    display: flex;
+    font-size: 14px;
+    justify-content: space-between;
+    margin: 10px 10px 15px;
+}
+
+.remember-forgot label {
+    color: #fff;
+}
+
+.remember-forgot label input {
+    margin-right: 3px;
+    accent-color: #f4b342;
+}
+
+.remember-forgot a {
+    text-decoration: none;
+    color: #fff;
+    margin-right: -33px;
+}
+
+.remember-forgot a:hover {
+    color: #f4b342;
+}
+
+.chk-notifications {
+    display: flex;
+    font-size: 14px;
+    justify-content: space-between;
+    margin: 10px 10px 15px;
+}
+
+.chk-notifications label {
+    color: #fff;
+}
+
+.chk-notifications label input {
+    margin-right: 3px;
+    accent-color: #f4b342;
+}
+
+.chk-notifications a {
+    text-decoration: none;
+    color: #fff;
+    margin-right: -33px;
+}
+
+.chk-notifications a:hover {
+    color: #f4b342;
+}
+
+
+.register {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+    padding-left: 25px;
+    font-size: 14px;
+    color: #fff;
+}
+
+.register a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.register a:hover {
+    color: #f4b342;
+}

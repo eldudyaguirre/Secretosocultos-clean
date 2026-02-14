@@ -1,0 +1,422 @@
+{% load static %}
+
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Secretos Ocultos - Historia</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/iconblanco.png' %}">
+
+ <!-- CSS here -->
+ <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+ <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+ <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+ <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+ <link rel="stylesheet" href="{% static 'css/all.min.css' %}">
+ <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+ <link rel="stylesheet" href="{% static 'css/font.css' %}">
+ <link rel="stylesheet" href="{% static 'css/themify-icons.css' %}">
+ <link rel="stylesheet" href="{% static 'css/metisMenu.css' %}">
+ <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
+ <link rel="stylesheet" href="{% static 'css/slick.css' %}">
+ <link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+
+<body>
+    <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <!-- preloader -->
+    <div id="preloader">
+        <div class="preloader">
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <!-- preloader end  -->
+    <!-- header-area start -->
+    <header id="top-menu">
+        <div class="main-header-area main-head-02">
+            <div class="container custom-container-03">
+                {% if user.is_authenticated %}
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-xl-2 col-lg-2 col-md-4 col-4">
+                        <div class="logo">
+                            <a class="logo-img" href="{% url 'home' %}"><img src="{% static 'img/logo/header-logo-negro-vertical.png' %}"
+                                    alt=""></a>
+                        </div>
+                    </div>
+                </div>
+                {% else %}
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-xl-2 col-lg-2 col-md-4 col-4">
+                        <div class="logo">
+                            <a class="logo-img" href="{% url 'home' %}"><img src="{% static 'img/logo/header-logo-negro-vertical.png' %}"
+                                    alt=""></a>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </header>
+    <!-- header-area end -->
+
+    <main>
+        
+        <!--page-title-area start-->
+        <section class="page-title-area" style="background-image:url('{% static 'img/bg/history-bg-1.jpg' %}');">
+            <div class="right-border-shape">
+                <img src="{% static 'img/shape/02.png' %}" alt="">
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-10 offset-xl-1">
+                        <div class="page-title-wrapper text-center">
+                            <h1 class="page-title wow fadeInUp2 animated" data-wow-delay='.1s'>Nuestros Comienzos</h1>
+                            <div class="breadcrumb">
+                                <ul class="breadcrumb-list wow fadeInUp2 animated" data-wow-delay='.3s'>
+                                    {% if user.is_authenticated %}
+                                    <li><a href="{% url 'home' %}">Inicio <i class="far fa-chevron-right"></i></a></li>
+                                    {% else %}
+                                    <li><a href="{% url 'home' %}">Inicio <i class="far fa-chevron-right"></i></a></li>
+                                    {% endif %}
+                                    <li><a class="active" href="#">Historia</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--page-title-area area-->
+        <!--about-us-area start-->
+        <section class="overview-area pt-130 pb-95">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 col-md-12">
+                        <div class="about__wrapper pr-85 mb-30">
+                            <div class="section-title text-left mb-35 wow fadeInUp2 animated" data-wow-delay='.1s'>
+                                <h6 class="left-line pl-75">¿Pero Quienes Somos?</h6>
+                                <h2>Tenemos más de 15 años en <br>
+                                    <span>Esoterismo</span></h2>
+                            </div>
+                            <div class="partner-list d-sm-flex align-items-center justify-content-between mb-50 wow fadeInUp2 animated" data-wow-delay='.1s'>
+                                <div class="total-client">
+                                    <h4><span>3k </span> Clientes Satisfechos</h4>
+                                </div>
+                                <div class="joint-btn">
+                                    <a href="{% url 'signup' %}" class="theme_btn theme_btn2 ">UNETE A NOSOTROS <i
+                                            class="far fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                            <div class="funding-list">
+                                <div class="crowd-box d-flex align-items-center pb-30 mb-40 wow fadeInUp2 animated" data-wow-delay='.1s'>
+                                    <div class="crowd-box__icon">
+                                        <i class="flaticon-vector-ojologoverde"></i>
+                                    </div>
+                                    <div class="crowd-box__text">
+                                        <h4>Consejería Espiritual</h4>
+                                        <p>Estamos listos para aconsejarte en cualquier necesidad
+                                            espiritual que necesites.</p>
+                                    </div>
+                                </div>
+                                <div class="crowd-box d-flex align-items-center pb-30 mb-40 wow fadeInUp2 animated" data-wow-delay='.1s'>
+                                    <div class="crowd-box__icon">
+                                        <i class="flaticon-vector-talisman"></i>
+                                    </div>
+                                    <div class="crowd-box__text">
+                                        <h4>Éxito garantizado</h4>
+                                        <p>Apostarle a nuestro servicio te va a ayudar
+                                            a cumplir esa necesidad espiritual.</p>
+                                    </div>
+                                </div>
+                                <a href="{% url 'tienda' %}" class="theme_btn theme_btn_bg wow fadeInUp2 animated" data-wow-delay='.1s'>Saber Más <i
+                                        class="far fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-12">
+                        <div class="about-img">
+                            <div class="row">
+                                <div class="col-xl-6 col-lg-6">
+                                    <div class="overview__thumb mb-30 wow fadeInUp2 animated" data-wow-delay='.1s'>
+                                        <img src="{% static 'img/about/07.jpg' %}" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 d-none d-lg-inline-block">
+                                    <div class="overview__thumb mb-30 wow fadeInUp2 animated" data-wow-delay='.1s'>
+                                        <img src="{% static 'img/about/05.jpg' %}" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 d-none d-lg-inline-block">
+                                    <div class="overview__thumb mb-30 wow fadeInUp2 animated" data-wow-delay='.1s'>
+                                        <img src="{% static 'img/about/06.jpg' %}" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="about-img__style-text wow fadeInUp2 animated" data-wow-delay='.1s'>
+                                <img src="{% static 'img/shape/08.png' %}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--about-us-area end-->
+        <!--donation-area start-->
+        <section class="donation-area pt-125 pb-100" style="background-image:url('{% static 'img/events/Events-01.jpg' %}')">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-8 offset-xl-2">
+                        <div class="donation-wrapper">
+                            <div class="section-title white-title text-center mb-40 wow fadeInUp2 animated"
+                                data-wow-delay='.1s'>
+                                <h6 class="left-line pl-75 pr-75">Tenemos todas las</h6>
+                                <h2>Técnicas y herramientas<br>
+                                    <span>para manifestar tus intenciones.</span></h2>
+                            </div>
+                            <ul class="btn-list text-center mb-30 wow fadeInUp2 animated" data-wow-delay='.3s'>
+                                <li><a class="theme_btn theme_btn_bg" href="{% url 'tienda' %}"
+                                        data-animation="fadeInLeft" data-delay=".7s">Saber más<i
+                                            class="far fa-arrow-right"></i></a>
+                                </li>
+                                <li><a class="theme_btn theme-border-btn" href="{% url 'contactanos' %}"
+                                        data-animation="fadeInLeft" data-delay=".7s">donar ahora<i
+                                            class="far fa-arrow-right"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--donation-area end-->
+      <!--our-goal-area start-->
+        <section class="our-goal-area pos-rel wow fadeInUp2 animated" data-wow-delay='.1s'>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item">
+                              <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">La Historia</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Nuestras Metas</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Misión y Visión</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                <div class="row goal-content mt-75 pb-100 wow fadeInUp animated" data-wow-delay='.3s'>
+                                    <div class="col-xl-6 col-lg-6">
+                                        <div class="goal-wrapper pr-120">
+                                            <div class="section-title text-left mb-35">
+                                                <h2>La energía guía...<br>
+                                                <span>el destino responde </span></h2>
+                                                <p>Secretos Ocultos nace del respeto profundo por las fuerzas invisibles que nos rodean en la naturaleza. La energía, canalizada con intención y sabiduría ancestral, fue marcando el camino hasta convertirse en un legado espiritual que se transmite a través de rituales, símbolos y herramientas sagradas. Hoy, ese legado continúa vivo, acompañando a quienes escuchan el llamado del destino y buscan equilibrio, protección y claridad en su sendero.</p>
+                                                <br>Desde 1991, hemos sido guardianes de saberes esotéricos transmitidos con responsabilidad, ética y profundo respeto espiritual. Cada ritual, amuleto y guía ofrecida es el resultado de una práctica constante, de la observación del tiempo y de la experiencia adquirida acompañando procesos reales de transformación. Este legado no solo se sostiene en los años, sino en la confianza de quienes han encontrado orientación, protección y armonía a lo largo de su camino espiritual..</br>
+                                                <br>Todo estaba escrito… solo faltaba descubrirlo.</br>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-6 col-lg-6">
+                                        <div class="goal-img-box pl-100">
+                                            <div class="goal-img-one">
+                                                <img src="{% static 'img/events/Historia-01.png' %}" alt="">
+                                            </div>
+                                            <div class="goal-img-two">
+                                                <img src="{% static 'img/logo/History-03.png' %}" alt="">
+                                            </div>
+                                            <div class="goal-img-three">
+                                                <img src="{% static 'img/shape/04a.png' %}" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                <div class="row goal-content mt-75 pb-100">
+                                    <div class="col-xl-6 col-lg-6">
+                                        <div class="goal-wrapper pr-120">
+                                            <div class="section-title text-left mb-35">
+                                                <h2>Cambiar el Futuro<br>
+                                                <span>para una mejor vida </span></h2>
+                                                <p>Tenemos la clara visión de que con nuestro granito de arena podremos ayudarte a mejorar tu estilo de vida invirtiendo en tu propio camino de manera progresiva.</p>
+                                                <br>Queremos Orientar a quienes buscan respuestas mediante lecturas, rituales y productos esotéricos preparados con intención consciente, ayudando a canalizar la energía hacia la protección, la armonía y la prosperidad.</br>
+                                                <br>Estamos seguros de querer consolidar Secretos Ocultos como un espacio seguro —físico y espiritual— donde cada persona se sienta escuchada, acompañada y respetada en su camino energético.</br>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-6 col-lg-6">
+                                        <div class="goal-img-box pl-100">
+                                            <div class="goal-img-one">
+                                                <img src="{% static 'img/events/Historia-02.jpg' %}" alt="">
+                                            </div>
+                                            <div class="goal-img-two">
+                                                <img src="{% static 'img/logo/History-03.png' %}" alt="">
+                                            </div>
+                                            <div class="goal-img-three">
+                                                <img src="{% static 'img/shape/04a.png' %}" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                                <div class="row goal-content mt-75 pb-100">
+                                    <div class="col-xl-6 col-lg-6">
+                                        <div class="goal-wrapper pr-120">
+                                            <div class="section-title text-left mb-35">
+                                                <h2>Misión<br>
+                                                <span>y Visión</span></h2>
+                                                <p>Acompañar espiritualmente a las personas a través de la consejería consciente y la práctica responsable del esoterismo, ofreciendo orientación, rituales y herramientas energéticas preparadas con intención, ética y respeto por el libre albedrío. En Secretos Ocultos, honramos un legado de 35 años de experiencia, guiando procesos de equilibrio, protección y transformación espiritual.</p>
+                                                <br>Ser un referente espiritual reconocido por su integridad, sabiduría ancestral y acompañamiento ético, consolidando a Secretos Ocultos como un espacio de confianza donde la energía, el destino y la intención consciente se unen para guiar a las personas en su camino espiritual, manteniendo vivo un legado esotérico que trasciende generaciones.</br>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-6 col-lg-6">
+                                        <div class="goal-img-box pl-100">
+                                            <div class="goal-img-one">
+                                                <img src="{% static 'img/events/Historia-03.jpg' %}" alt="">
+                                            </div>
+                                            <div class="goal-img-two">
+                                                <img src="{% static 'img/logo/History-03.png' %}" alt="">
+                                            </div>
+                                            <div class="goal-img-three">
+                                                <img src="{% static 'img/shape/04a.png' %}" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--our-goal-area end-->
+    <!--cta-area start-->
+    <section class="cta-area theme-bg pt-55 pb-25">
+        <div class="container">
+            <div class="row align-items-md-center">
+                <div class="col-xl-9 col-lg-9 col-md-8">
+                    <div class="cta-wrapper wow fadeInUp2 animated" data-wow-delay='.1s'>
+                        <div class="section-title mb-30">
+                            <h2>Quiere ser un cliente <b>Premium</b>?</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-4">
+                    <div class="cta-wrapper">
+                        <div class="cta-btn text-md-right wow fadeInUp2 animated" data-wow-delay='.1s'>
+                            <a class="theme_btn theme_btn_bg" href="{% url 'contactanos' %}">contactanos <i
+                                class="far fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--cta-area end-->
+  </main>
+<!--footer-area start-->
+<footer class="footer-area heding-bg pos-rel pt-100" style="background-image:url('{% static 'img/bg/02a.png' %}')">
+  <div class="container">
+      <div class="footer-bottom-area">
+          <div class="row mb-30">
+              <div class="col-xl-2 col-lg-3 col-md-6  wow fadeInUp2 animated" data-wow-delay='.1s'>
+                  <div class="footer__widget mb-30">
+                      <h5 class="semi-title mb-25">Accesos Rápidos</h5>
+                      <ul class="fot-list">
+                          <li><a href="{% url 'about' %}">Acerca de</a></li>
+                          <li><a href="{% url 'tienda' %}">Nuestros Servicios</a></li>
+                          <li><a href="#">Tips & Blog</a></li>
+                          <li><a href="{% url 'contactanos' %}">Contactanos</a></li>
+                      </ul>
+                  </div>
+              </div>
+              <div class="col-xl-4 col-lg-6 col-md-6  wow fadeInUp2 animated" data-wow-delay='.5s'>
+                  <div class="footer__widget mb-25 pl-85">
+                      <h5 class="semi-title mb-25">Secretos Ocultos</h5>
+                      <p class="mb-10">Tienda Esotérica Online, velas, amuletos, escencias,
+                        lectura de tarot, limpias y más.
+                      </p>
+                      <ul class="fot-list address-list">
+                          <li><a href="#"><i class="far fa-map-marker-alt"></i> Av. de las Américas 3-111, Cuenca - Ecuador</a></li>
+                          <li><a href="mailto:secretos_ocultos@gmail.com"><i class="far fa-envelope"></i> secretos_ocultos@gmail.com</a></li>
+                          <li><a href="https://api.whatsapp.com/send/?phone=593994100111&text=Quiero%20m%C3%A1s%20informaci%C3%B3n%20de%20Secretos%20Ocultos"><i class="fab fa-whatsapp"></i> (+593) 994 100 111</a></li>
+                      </ul>
+                  </div>
+              </div>
+              <div class="col-xl-4 col-lg-6 col-md-6  wow fadeInUp2 animated" data-wow-delay='.7s'>
+                  <div class="footer__widget fot_abot mb-30 pl-85">
+                      <h5 class="semi-title mb-25">Apoyanos</h5>
+                      <p class="mb-30">Esta Web tiene autogestión por lo que 
+                          tus aportes son necesarias para seguir funcionando.</p>
+                          <div class="subscribe-content foter-subscribe">
+                              <form class="subscribe-form" action="{% static 'mail.php' %}">
+                                  <input class="form-control" type="text" placeholder="Ingresa tu Email">
+                                  <button><i class="far fa-arrow-right"></i></button>
+                              </form>
+                          </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!--scroll-target-btn-->
+      <div class="copy-right-area pt-30">
+          <div class="row align-items-center">
+              <div class="col-xl-7 col-lg-7 col-md-6">
+                  <div class="footer-log mb-30">
+                      <a href="{% url 'home' %}" class="footer-logo mb-30"><img src="{% static 'img/logo/footer-logo1.png' %}"
+                          alt=""></a>
+                  </div>
+              </div>
+              <div class="col-xl-5 col-lg-5 col-md-6">
+                  <div class="copyright mb-30 text-md-right">
+                      <p>© Imashuti 2025 - Todos los Derechos Reservados</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</footer>
+<!--footer-area end-->
+
+  
+
+<!-- JS here -->
+<script src="{% static 'js/vendor/modernizr-3.5.0.min.js' %}"></script>
+<script src="{% static 'js/vendor/jquery-1.12.4.min.js' %}"></script>
+<script src="{% static 'js/popper.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+<script src="{% static 'js/slick.min.js' %}"></script>
+<script src="{% static 'js/jquery.meanmenu.min.js' %}"></script>
+<script src="{% static 'js/metisMenu.min.js' %}"></script>
+<script src="{% static 'js/jquery.nice-select.js' %}"></script>
+<script src="{% static 'js/ajax-form.js' %}"></script>
+<script src="{% static 'js/wow.min.js' %}"></script>
+<script src="{% static 'js/jquery.counterup.min.js' %}"></script>
+<script src="{% static 'js/waypoints.min.js' %}"></script>
+<script src="{% static 'js/jquery.scrollUp.min.js' %}"></script>
+<script src="{% static 'js/imagesloaded.pkgd.min.js' %}"></script>
+<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+<script src="{% static 'js/jquery.easypiechart.js' %}"></script>
+<script src="{% static 'js/tilt.jquery.js' %}"></script>
+<script src="{% static 'js/plugins.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>

@@ -1,0 +1,194 @@
+	/*
+  	Flaticon icon font: Flaticon
+  	Creation date: 17/11/2020 17:03
+  	*/
+
+@font-face {
+  font-family: "Flaticon";
+  src: url("../fonts/Flaticon.eot");
+  src: url("../fonts/Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("../fonts/Flaticon.woff2") format("woff2"),
+       url("../fonts/Flaticon.woff") format("woff"),
+       url("../fonts/Flaticon.ttf") format("truetype"),
+       url("../fonts/Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("../fonts/Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+  font-family: Flaticon;
+  font-style: normal;
+}
+
+.flaticon-heart-1:before { content: "\f100"; }
+.flaticon-24-hours-support:before { content: "\f101"; }
+.flaticon-email:before { content: "\f102"; }
+.flaticon-dish:before { content: "\f103"; }
+.flaticon-open-book:before { content: "\f104"; }
+.flaticon-high-performance:before { content: "\f105"; }
+.flaticon-computer:before { content: "\f106"; }
+.flaticon-project-management:before { content: "\f107"; }
+.flaticon-stethoscope:before { content: "\f108"; }
+.flaticon-right-quote:before { content: "\f109"; }
+.flaticon-call:before { content: "\f10a"; }
+.flaticon-crowdfunding-1:before { content: "\f10b"; }
+.flaticon-investment:before { content: "\f10c"; }
+.flaticon-vector:before { content: "\f10d"; }
+
+/* regla existente (asegúrate de que no haya otra idéntica más abajo) */
+.flaticon-vector-tarot:before {
+  content: "";
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  background-image: url("/static/fonts/tarotverde.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  vertical-align: middle;
+  transition: background-image 0.15s linear; /* no animable, pero queda elegante */
+}
+
+/* al hacer hover en el contenedor (mejor UX) cambiar a la versión blanca */
+.features:hover .flaticon-vector-tarot:before,
+.features__icon:hover .flaticon-vector-tarot:before {
+  background-image: url("/static/fonts/tarotblanco.svg");
+}
+
+.flaticon-vector-veladoras:before {
+  content: "";
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  background-image: url("/static/fonts/veladorasverde.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  vertical-align: middle;
+  transition: background-image 0.15s linear; /* no animable, pero queda elegante */
+}
+
+/* al hacer hover en el contenedor (mejor UX) cambiar a la versión blanca */
+.features:hover .flaticon-vector-veladoras:before,
+.features__icon:hover .flaticon-vector-veladoras:before {
+  background-image: url("/static/fonts/veladorasblanco.svg");
+}
+
+.flaticon-vector-talisman:before {
+  content: "";
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  background-image: url("/static/fonts/talismanverde.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  vertical-align: middle;
+  transition: background-image 0.15s linear; /* no animable, pero queda elegante */
+}
+
+/* al hacer hover en el contenedor (mejor UX) cambiar a la versión blanca */
+.features:hover .flaticon-vector-talisman:before,
+.features__icon:hover .flaticon-vector-talisman:before {
+  background-image: url("/static/fonts/talismanblanco.svg");
+}
+
+.flaticon-vector-articulos:before {
+  content: "";
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  background-image: url("/static/fonts/articulosverde.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  vertical-align: middle;
+  transition: background-image 0.15s linear; /* no animable, pero queda elegante */
+}
+
+/* al hacer hover en el contenedor (mejor UX) cambiar a la versión blanca */
+.features:hover .flaticon-vector-articulos:before,
+.features__icon:hover .flaticon-vector-articulos:before {
+  background-image: url("/static/fonts/articulosblanco.svg");
+}
+
+.flaticon-vector-rituales:before {
+  content: "";
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  background-image: url("/static/fonts/mesatrabajoverde.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  vertical-align: middle;
+  transition: background-image 0.15s linear; /* no animable, pero queda elegante */
+}
+
+/* al hacer hover en el contenedor (mejor UX) cambiar a la versión blanca */
+.features:hover .flaticon-vector-rituales:before,
+.features__icon:hover .flaticon-vector-rituales:before {
+  background-image: url("/static/fonts/mesatrabajoblanco.svg");
+}
+
+.flaticon-vector-ojo:before {
+  content: "";
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  background-image: url("/static/fonts/Ojo.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  vertical-align: middle;
+  transition: background-image 0.15s linear; /* no animable, pero queda elegante */
+}
+/* al hacer hover en el contenedor (mejor UX) cambiar a la versión blanca */
+.features:hover .flaticon-vector-ojo:before,
+.features__icon:hover .flaticon-vector-ojo:before {
+  background-image: url("/static/fonts/Ojo.svg");
+}
+
+.flaticon-vector-productos:before {
+  content: "";
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  background-image: url("/static/fonts/rituales.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  vertical-align: middle;
+  transition: background-image 0.15s linear; /* no animable, pero queda elegante */
+}
+/* al hacer hover en el contenedor (mejor UX) cambiar a la versión blanca */
+.features:hover .flaticon-vector-productos:before,
+.features__icon:hover .flaticon-vector-productos:before {
+  background-image: url("/static/fonts/rituales.svg");
+}
+
+.flaticon-vector-ojologoverde:before {
+  content: "";
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  background-image: url("/static/fonts/ojologoverde.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  vertical-align: middle;
+  transition: background-image 0.15s linear; /* no animable, pero queda elegante */
+}
+/* al hacer hover en el contenedor (mejor UX) cambiar a la versión blanca */
+.features:hover .flaticon-vector-ojologoverde:before,
+.features__icon:hover .flaticon-vector-ojologoverde:before {
+  background-image: url("/static/fonts/ojologo.svg");
+}

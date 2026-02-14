@@ -1,0 +1,290 @@
+{% load static %}
+{% load django_bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Eminka - Nuevo Proyecto </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/iconblanco.png' %}">
+
+ <!-- CSS here -->
+ <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+ <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+ <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+ <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+ <link rel="stylesheet" href="{% static 'css/all.min.css' %}">
+ <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+ <link rel="stylesheet" href="{% static 'css/font.css' %}">
+ <link rel="stylesheet" href="{% static 'css/themify-icons.css' %}">
+ <link rel="stylesheet" href="{% static 'css/metisMenu.css' %}">
+ <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
+ <link rel="stylesheet" href="{% static 'css/slick.css' %}">
+ <link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+
+<body>
+    <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <!-- preloader -->
+    <div id="preloader">
+        <div class="preloader">
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <!-- preloader end  -->
+    <!-- header-area start -->
+    <header id="top-menu">
+        <div class="main-header-area main-head-02">
+            <div class="container custom-container-03">
+                {% if user.is_authenticated %}
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-xl-2 col-lg-2 col-md-4 col-4">
+                        <div class="logo">
+                            <a class="logo-img" href="{% url 'homein' %}"><img src="{% static 'img/logo/header-logo-negro.png' %}"
+                                    alt=""></a>
+                        </div>
+                    </div>
+                </div>
+                {% else %}
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-xl-2 col-lg-2 col-md-4 col-4">
+                        <div class="logo">
+                            <a class="logo-img" href="{% url 'home' %}"><img src="{% static 'img/logo/header-logo-negro.png' %}"
+                                    alt=""></a>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </header>
+    <!-- header-area end -->
+
+    <main>
+        
+        <!--page-title-area start-->
+        <section class="page-title-area" style="background-image:url('{% static 'img/bg/bg-project-01.jpg' %}');">
+            <div class="right-border-shape">
+                <img src="{% static 'img/shape/02.png' %}" alt="">
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-10 offset-xl-1">
+                        <div class="page-title-wrapper text-center">
+                            <h1 class="page-title wow fadeInUp2 animated" data-wow-delay='.1s'>Nuevo Proyecto</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--page-title-area area-->
+        <!--feature-area start-->
+        <section class="feature-area grey-bg pos-rel pt-130 pb-100">
+            <div class="round-shape">
+                <img src="{% static 'img/shape/01.png' %}" alt="">
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-10 offset-xl-1 wow fadeInUp2 animated" data-wow-delay='.1s'>
+                        <div class="section-title text-center mb-85">
+                            <h6 class="left-line pl-75 pr-75">Completa el Formulario</h6>
+                            <h2>Para poder crear <br>
+                                <span>tu nuevo proyecto.</span></h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--feature-area end-->
+       <!--newproject-area start-->
+       <section class="contact-details-area pb-120 wow fadeInUp2 animated" data-wow-delay='.3s'>
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    {% bootstrap_messages %}
+                    <form id="nuevo_proyecto" action="{% url 'projectnew' %}" method="post" novalidate>
+                        {% csrf_token %}
+                        <div class="post-form-area contact-form pt-125">
+                            <div class="row">
+                                <div class="col-xl-12 col-lg-12 col-md-12">
+                                    <div class="input-box">
+                                        <h5>Nombre del Proyecto</h5>
+                                        <div class="input-text mb-35">
+                                            <input name="nombre" type="text" class="form-control" placeholder="Nombre Completo Aquí">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6">
+                                    <h5>Fecha de terminación del Proyecto</h5>
+                                    <div class="input-group date">
+                                      <input type="date" class="form-control" name="date"/>
+                                    </div>
+                                  </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6">
+                                        <h5>Meta a recolectar</h5>
+                                        <div class="input-group text">
+                                            <input name="meta" type="number" class="form-control text-right" placeholder="Escribe tu meta"/>
+                                       </div>
+                                </div>
+                                <div class="col-xl-12 col-lg-12 col-md-12">
+                                    <div class="input-box mb-35">
+                                        <h5>Descripción del Proyecto</h5>
+                                        <div class="input-text mb-35">
+                                            <textarea name="descripcion" id="descripcion" rows="3" placeholder="Escribe tu Descripción aquí"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6">
+                                    <div class="input-box mb-35">
+                                        <h5>Logo</h5>
+                                        <div class="input-group mb-35">
+                                            <input name="logo" type="file" class="form-control" placeholder="logo">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6">
+                                    <div class="input-box mb-35">
+                                        <h5>Imagen</h5>
+                                        <div class="input-group mb-35">
+                                            <input name="imagen" type="file" class="form-control" placeholder="logo">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-12 col-lg-12 col-md-6">
+                                    <div class="msg-btn text-md-center">
+                                        {% bootstrap_button "Guardar" button_type="submit" size="lg"  %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--newproject-area end-->
+    </main>
+<!--footer-area start-->
+<footer class="footer-area heding-bg pos-rel pt-100" style="background-image:url('{% static 'img/bg/02.png' %}')">
+    <div class="container">
+        <div class="footer-bottom-area">
+            <div class="row mb-30">
+                <div class="col-xl-2 col-lg-3 col-md-6  wow fadeInUp2 animated" data-wow-delay='.1s'>
+                    <div class="footer__widget mb-30">
+                        <h5 class="semi-title mb-25">Accesos Rápidos</h5>
+                        <ul class="fot-list">
+                            <li><a href="#">Acerca de</a></li>
+                            <li><a href="#">Últimos Eventos</a></li>
+                            <li><a href="#">Como Funciona</a></li>
+                            <li><a href="#">Noticias & Artículos</a></li>
+                            <li><a href="#">Contactanos</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-lg-3 col-md-6 wow fadeInUp2 animated" data-wow-delay='.3s'>
+                    <div class="footer__widget mb-30 pl-40">
+                        <h5 class="semi-title mb-25">Nuestro Proyecto</h5>
+                        <ul class="fot-list">
+                            <li><a href="#">Educación</a></li>
+                            <li><a href="#">Diseño</a></li>
+                            <li><a href="#">Foto & Video</a></li>
+                            <li><a href="#">Tecnología</a></li>
+                            <li><a href="#">Aplicación</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-6 col-md-6  wow fadeInUp2 animated" data-wow-delay='.5s'>
+                    <div class="footer__widget mb-25 pl-85">
+                        <h5 class="semi-title mb-25">Nuestro Proyecto</h5>
+                        <p class="mb-10">Este Proyecto tiene un alcance nacional
+                            para los emprendimientos locales.</p>
+                        <ul class="fot-list address-list">
+                            <li><a href="#"><i class="far fa-map-marker-alt"></i> Francisco de Orellana, 3er Piso, Ecuador</a></li>
+                            <li><a href="#"><i class="far fa-envelope"></i> eminka_soporte@gmail.com</a></li>
+                            <li><a href="#"><i class="far fa-phone-volume"></i> (+593) 986 514 121</a></li>
+                        </ul>
+                        
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-6 col-md-6  wow fadeInUp2 animated" data-wow-delay='.7s'>
+                    <div class="footer__widget fot_abot mb-30 pl-85">
+                        <h5 class="semi-title mb-25">Apoyanos</h5>
+                        <p class="mb-30">Esta Web tiene autogestión por lo que 
+                            tus aportes son necesasrias para seguir funcionando.</p>
+                            <div class="subscribe-content foter-subscribe">
+                                <form class="subscribe-form" action="{% static 'mail.php' %}">
+                                    <input class="form-control" type="text" placeholder="Ingresa tu Email">
+                                    <button><i class="far fa-arrow-right"></i></button>
+                                </form>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--scroll-target-btn-->
+        <a href="#top-menu" class="scroll-target"><i class="far fa-arrow-up"></i></a>
+        <!--scroll-target-btn-->
+        <div class="copy-right-area pt-30">
+            <div class="row align-items-center">
+                <div class="col-xl-7 col-lg-7 col-md-6">
+                    {% if user.is_authenticated %}
+                    <div class="footer-log mb-30">
+                        <a href="{% url 'homein' %}" class="footer-logo mb-30"><img src="{% static 'img/logo/footer-logo1.png' %}"
+                            alt=""></a>
+                    </div>
+                    {% else %}
+                    <div class="footer-log mb-30">
+                        <a href="{% url 'home' %}" class="footer-logo mb-30"><img src="{% static 'img/logo/footer-logo1.png' %}"
+                            alt=""></a>
+                    </div>
+                    {% endif %}
+                </div>
+                <div class="col-xl-5 col-lg-5 col-md-6">
+                    <div class="copyright mb-30 text-md-right">
+                        <p>© 2023 G5 - G22023 Todos los Derechos Reservados</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </footer>
+  <!--footer-area end-->
+
+<!-- JS here -->
+<script src="{% static 'js/vendor/modernizr-3.5.0.min.js' %}"></script>
+<script src="{% static 'js/vendor/jquery-1.12.4.min.js' %}"></script>
+<script src="{% static 'js/popper.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+<script src="{% static 'js/slick.min.js' %}"></script>
+<script src="{% static 'js/jquery.meanmenu.min.js' %}"></script>
+<script src="{% static 'js/metisMenu.min.js' %}"></script>
+<script src="{% static 'js/jquery.nice-select.js' %}"></script>
+<script src="{% static 'js/ajax-form.js' %}"></script>
+<script src="{% static 'js/wow.min.js' %}"></script>
+<script src="{% static 'js/jquery.counterup.min.js' %}"></script>
+<script src="{% static 'js/waypoints.min.js' %}"></script>
+<script src="{% static 'js/jquery.scrollUp.min.js' %}"></script>
+<script src="{% static 'js/imagesloaded.pkgd.min.js' %}"></script>
+<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+<script src="{% static 'js/jquery.easypiechart.js' %}"></script>
+<script src="{% static 'js/tilt.jquery.js' %}"></script>
+<script src="{% static 'js/plugins.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>

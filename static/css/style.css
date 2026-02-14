@@ -1,0 +1,147 @@
+:root {
+    --azul: #4584b6;
+    --amarillo: #ffde57;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: var(--azul);
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    padding: 20px;
+}
+
+h1 {
+    color: white;
+    border: 6px solid white;
+    border-radius: 30px;
+    display: inline-block;
+    padding: 6px 12px;
+}
+
+.banner {
+    position: relative;
+}
+
+.banner img {
+    max-width: 100%;
+}
+
+.banner .welcome {
+    position: absolute;
+    background-color: var(--amarillo);
+    top: 30%;
+    left: 0px;
+    padding: 30px;    
+}
+
+.welcome h2 {
+    color: var(--azul);
+    font-size: 40px;
+}
+
+.welcome h2 span {
+    font-size: 1.5em;
+}
+
+.main-nav {
+    background-color: #646464;
+    padding: 15px;
+}
+
+.main-nav ul {
+    max-width:  1200px;
+    margin: 0 auto;    
+    white-space: nowrap;
+}
+
+.main-nav ul li {
+    display: inline-block;
+    width: 25%;
+    text-align: center;    
+}
+
+.main-nav ul li a {
+    color: var(--amarillo);
+    font-size: 24px;    
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.main-nav .join-link {
+    text-decoration: underline;
+}
+
+.main-section {
+    max-width: 100%;
+    margin: 50px auto;
+    padding: 0 10%;
+}
+
+.main-section article {
+    font-family: 'Raleway', sans-serif;
+}
+
+.main-section article h2 {
+    font-size: 48px;
+    text-align: center;
+}
+
+.main-section article p {
+    text-align: justify;    
+}
+
+.galeria-imagenes {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 10px;
+}
+
+.galeria-imagenes img {
+    width: 100%;
+    margin: auto;
+    border: 1px solid #646464;
+}
+
+footer {
+    background-color: var(--azul);
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 20px;
+}
+
+@media (max-width: 768px) {
+    .welcome h2 {
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .main-nav ul li {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 0px;
+    }    
+
+    .banner .welcome {
+        position: relative;
+        top: 0;
+        left: 0;
+    }   
+    
+    .galeria-imagenes {        
+        grid-template-columns: auto;
+    }
+}
