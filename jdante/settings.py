@@ -147,7 +147,7 @@ SOCIALACCOUNT_PROVIDERS = {
     }
 }
 
-SECRET_KEY = os.environ.get("SECRET_KEY")
+SECRET_KEY = os.environ.get("SECRET_KEY", "django-insecure-fallback-local-only")
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
