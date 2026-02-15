@@ -28,8 +28,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = [
+    "secretosocultos.up.railway.app",
+    ".railway.app",
+    "localhost",
+    "127.0.0.1",
+]
 
 # Application definition
 
@@ -143,7 +147,7 @@ SOCIALACCOUNT_PROVIDERS = {
     }
 }
 
-
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
