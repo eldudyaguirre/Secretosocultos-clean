@@ -28,17 +28,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [
-    "secretosocultos.up.railway.app",
-    ".railway.app",
-    "localhost",
-    "127.0.0.1",
-]
+ALLOWED_HOSTS = ["secretosocultos.up.railway.app", ".railway.app"]
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 CSRF_TRUSTED_ORIGINS = [
     "https://secretosocultos.up.railway.app",
 ]
+USE_X_FORWARDED_HOST = True
 # Application definition
 
 INSTALLED_APPS = [
