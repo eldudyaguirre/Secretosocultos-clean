@@ -41,8 +41,6 @@ CSRF_TRUSTED_ORIGINS = [
 ]
 USE_X_FORWARDED_HOST = True
 
-SESSION_COOKIE_SECURE = False
-CSRF_COOKIE_SECURE = False
 # Application definition
 
 INSTALLED_APPS = [
@@ -187,8 +185,6 @@ MEDIA_ROOT = BASE_DIR / 'media'
 LOGOUT_REDIRECT_URL = 'home'
 
 DEBUG = False
-
-ALLOWED_HOSTS = ['.onrender.com']
 
 DATABASES = {
     'default': dj_database_url.config(
