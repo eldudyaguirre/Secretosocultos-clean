@@ -19,6 +19,7 @@ def error_404(request, exception):
     return render(request, '404.html',{})
 
 def home(request):
+    crear_admin()
     productos = Producto.objects.all()
     return render(request, 'index.html', {'productos': productos})
 
@@ -252,3 +253,13 @@ def tienda_producto(request, producto_id):
 #
 #def signupnow(request):
 #    return render(request, 'sign-up.html')
+
+from django.contrib.auth.models import User
+
+def crear_admin():
+    if not User.objects.filter(username="admin").exists():
+        User.objects.create_superuser(
+            username="admin",
+            email="eldudyaguirre@gmail.com",
+            password="SMjonasdante2026"
+        )
