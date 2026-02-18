@@ -2357,6 +2357,12 @@ section-title
   color: #02b663;
 }
 
+.menu-divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, #b48cff, transparent);
+    margin: 20px 0;
+}
+
 .side-mobile-menu {
   display: none;
 }
