@@ -2608,8 +2608,8 @@ ul.breadcrumb-list li a.active {
   padding: 25px 30px;
   height: 100%;
   display: block;
-  background-color: #1a1e2d;
-  opacity: 0.5;
+  background-color: rgba(26, 30, 45, 0.5);
+  color: white
   z-index: 1020;
   -webkit-transition: all 600ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
   -moz-transition: all 600ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
