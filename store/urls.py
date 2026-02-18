@@ -24,6 +24,7 @@ urlpatterns = [
     path('blog-standard/', views.blogstandard, name='blog-standard'),
     path('tienda/', views.tienda, name='tienda'),
     path("tienda/<str:categoria_nombre>/", views.tienda_categoria, name="tienda_categoria"),
+#    path('tienda/<slug:slug>/', views.productos_por_categoria, name='productos_por_categoria'),
     path("producto/<int:producto_id>/", views.tienda_producto, name="tienda_producto"),
     path('catalog/', views.catalog, name='catalog'),
     path('events-details/', views.eventsdetails, name='events-details'),
