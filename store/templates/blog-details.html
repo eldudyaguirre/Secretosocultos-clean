@@ -76,15 +76,16 @@
                 <div class="col-xl-8 col-lg-8 col-md-12 mb-40">
                     <div class="blogs__thumb--img white-bg pb-25">
                         {% if post.imagen %}
-                        <img src="{{ post.imagen.url }}" alt="{{ post.titulo }}">
+                        <img src="{{ post.imagen.url }}?c_fill,w_770,h_435" 
+                            alt="{{ post.titulo }}">
                         {% else %}
-                            <img src="{% static 'img/blog/default.jpg' %}" alt="Default">
+                            <img src="{% static 'img/blog/11.jpg' %}" alt="Default">
                         {% endif %}
                    </div>
                     <div class="blogs-details-content-area white-bg">
                         <div class="blogs blogs-03 white-bg wow fadeInUp2 animated" data-wow-delay='.1s'>
                             <div class="blogs__thumb pos-rel mb-35">
-                                <a class="blog-tag" href="{% url 'blog-details' post.slug %}">design</a>
+                                <a class="blog-tag" href="#">{{ post.categoria.nombre }}</a>
                             </div>
                             <div class="blogs__content blogs-03__content">
                                 <h3 class="mb-20"><a href="{% url 'blog-details' post.slug %}">Decision Inspire Design With Ott Storch When Idea How To Space And Kern Punctuation</a></h3>
