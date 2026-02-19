@@ -57,31 +57,28 @@
                         </div>
                     </div>
                     <div class="col-xl-6 col-lg-6 d-flex justify-content-end">
+                        {% if user.is_authenticated %}
                         <div class="login-area">
-                            <a class="media-link" href="{% url 'home' %}"><i class="fa fa-home"></i> Inicio</a> 
+                            <a class="media-link" href="#"><i class="far fa-user"></i> Bienvenid@ {{ user.first_name }} </a>
                         </div>
-                      {% if user.is_authenticated %}
-                      <div class="login-area">
-                          <a class="media-link" href="#"><i class="far fa-user"></i> Bienvenid@ {{ user.first_name }} {{ user.last_name }}</a>
-                      </div>
-                      <div class="login-area">
-                          <a class="media-link" href="{% url 'logout' %}"><i class="fa fa-sign-out"></i> Salir</a> 
-                      </div>
-                      {% else %}
+                        <div class="login-area">
+                            <a class="media-link" href="{% url 'logout' %}"><i class="fa fa-sign-out"></i> Salir</a> 
+                        </div>
+                        {% else %}
                         <div class="login-area">
                             <a class="media-link" href="{% url 'signin' %}"><i class="far fa-lock-alt"></i>Ingresar</a>
                         </div>
                         <div class="login-area">
-                          <a class="media-link" href="{% url 'signup' %}"><i class="far fa-user-alt"></i> Registrate</a>
-                      </div>
-                      {% endif %}
-                        <div class="top-right-nav">
-                            <ul>
-                                <li> <a href="https://www.facebook.com/jonas.dante.5"><i class="fab fa-facebook-f"></i></a></li>
-                                <li> <a href="https://www.tiktok.com/@jonas_tarot"><i class="fa-brands fa-tiktok"></i></a></li>
-                                <li> <a href="https://www.instagram.com/tienda.esoterismo?igsh=YW4wcnM4bW82dnVu"><i class="fa-brands fa-instagram"></i></a></li>
-                            </ul>
+                            <a class="media-link" href="{% url 'signup' %}"><i class="far fa-user-alt"></i> Registrate</a>
                         </div>
+                        {% endif %}
+                            <div class="top-right-nav">
+                                <ul>
+                                    <li> <a href="https://www.facebook.com/jonas.dante.5"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li> <a href="https://www.tiktok.com/@jonas_tarot"><i class="fa-brands fa-tiktok"></i></a></li>
+                                    <li> <a href="https://www.instagram.com/tienda.esoterismo?igsh=YW4wcnM4bW82dnVu"><i class="fa-brands fa-instagram"></i></a></li>
+                                </ul>
+                            </div>
                     </div>
                 </div>
             </div>
