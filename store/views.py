@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from store.models import Producto, Categoria, PerfilUsuario, Post
+from store.models import Producto, Categoria, PerfilUsuario, Post, CategoriaBlog
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
@@ -146,11 +146,16 @@ def catalog(request):
 
 def blogdetails(request, slug):
     post = get_object_or_404(Post, slug=slug, activo=True)
+    categorias = CategoriaBlog.objects.filter(activa=True)
+    posts_recientes = Post.objects.filter(activo=True).exclude(id=post.id)[:4]
     return render(request, "blog-details.html", {"post": post})
 
 def bloggrid(request):
     posts = Post.objects.filter(activo=True)
-    return render(request, "blog-grid.html", {"posts": posts})
+    return render(request, "blog-grid.html", {
+        "post": post,
+        "categorias": categorias,
+        "posts_recientes": posts_recientes})
 
 def blogstandard(request):
     return render(request, 'blog-standard.html')

@@ -99,7 +99,7 @@
                                 <p>{{ post.contenido|linebreaks }}</p>
                             </div>
                         </div>
-                        <div class="blog-post-text theme-bg2 mb-40 wow fadeInUp2 animated" data-wow-delay='.1s'>
+                        <div class="blog-post-text theme-bg3 mb-40 wow fadeInUp2 animated" data-wow-delay='.1s'>
                             <h4>{{ post.titulo }}</h4>
                             <p><i class="far fa-quote-left"></i> {{ post.get_autor_blog_display }}</p>
                         </div>
@@ -256,16 +256,20 @@
                                 </form>
                             </div>
                         </div>
-                        <div class="widget mb-40 wow fadeInUp2 animated" data-wow-delay='.1s'>
+                        <div class="widget mb-40 wow fadeInUp2 animated">
                             <ul class="widget-list">
-                               <li>Web Development <span class="f-right"><i class="far fa-chevron-right"></i></span></li>
-                               <li>IT Consulting <span class="f-right"><i class="far fa-chevron-right"></i></span></li>
-                               <li>Product Engineering <span class="f-right"><i class="far fa-chevron-right"></i></span></li>
-                               <li>Product Marketing <span class="f-right"><i class="far fa-chevron-right"></i></span></li>
-                               <li>Education <span class="f-right"><i class="far fa-chevron-right"></i></span></li>
-                               <li>Medical & Health <span class="f-right"><i class="far fa-chevron-right"></i></span></li>
+                                {% for categoria in categorias %}
+                                <li>
+                                    <a href="{% url 'blog-categoria' categoria.slug %}">
+                                        {{ categoria.nombre }}
+                                        <span class="f-right">
+                                            <i class="far fa-chevron-right"></i>
+                                        </span>
+                                    </a>
+                                </li>
+                                {% endfor %}
                             </ul>
-                        </div>
+                        </div>                        
                         <div class="widget white-bg mb-40 pb-10 wow fadeInUp2 animated" data-wow-delay='.1s'>
                             <h4 class="widget-title pt-40 mb-20 pl-35">Recent News</h4>
                             <ul class="post-list">
