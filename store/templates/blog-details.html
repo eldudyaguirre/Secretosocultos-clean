@@ -260,7 +260,7 @@
                             <ul class="widget-list">
                                 {% for categoria in categorias %}
                                 <li>
-                                    <a href="{% url 'blog-categoria' categoria.slug %}">
+                                    <a href="{% url 'blog-grid' %}?categoria={{ categoria.slug }}">
                                         {{ categoria.nombre }}
                                         <span class="f-right">
                                             <i class="far fa-chevron-right"></i>

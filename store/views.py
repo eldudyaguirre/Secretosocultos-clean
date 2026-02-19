@@ -153,9 +153,15 @@ def blogdetails(request, slug):
                                                  "posts_recientes": posts_recientes})
 
 def bloggrid(request):
+    categoria_slug = request.GET.get("categoria")
+
     posts = Post.objects.filter(activo=True)
+
+    if categoria_slug:
+        posts = posts.filter(categoria__slug=categoria_slug)
+
     categorias = CategoriaBlog.objects.filter(activa=True)
-    posts_recientes = Post.objects.filter(activo=True)[:4]
+    posts_recientes = Post.objects.filter(activo=True).order_by("-creado")[:4]
 
     return render(request, "blog-grid.html", {
         "posts": posts,
@@ -263,19 +269,5 @@ def tienda_producto(request, producto_id):
         "producto": producto
     })
 
-#
-#def signinnow(request):
-#    return render(request, 'sign-in.html')
-#
-#def signupnow(request):
-#    return render(request, 'sign-up.html')
-
 from django.contrib.auth.models import User
 
-#def crear_admin():
-#    if not User.objects.filter(username="admin").exists():
-#        User.objects.create_superuser(
-#            username="admin",
-#            email="eldudyaguirre@gmail.com",
-#            password="SMjonasdante2026"
-#        )
