@@ -258,12 +258,16 @@
                         </div>
                         <div class="widget mb-40 wow fadeInUp2 animated" data-wow-delay='.1s'>
                             <ul class="widget-list">
-                               <li>Web Development <span class="f-right"><i class="far fa-chevron-right"></i></span></li>
-                               <li>IT Consulting <span class="f-right"><i class="far fa-chevron-right"></i></span></li>
-                               <li>Product Engineering <span class="f-right"><i class="far fa-chevron-right"></i></span></li>
-                               <li>Product Marketing <span class="f-right"><i class="far fa-chevron-right"></i></span></li>
-                               <li>Education <span class="f-right"><i class="far fa-chevron-right"></i></span></li>
-                               <li>Medical & Health <span class="f-right"><i class="far fa-chevron-right"></i></span></li>
+                                {% for categoria in categorias %}
+                                <li>
+                                    <a href="{% url 'blog-categoria' categoria.slug %}">
+                                        {{ categoria.nombre }}
+                                        <span class="f-right">
+                                            <i class="far fa-chevron-right"></i>
+                                        </span>
+                                    </a>
+                                </li>
+                                {% endfor %}
                             </ul>
                         </div>
                         <div class="widget white-bg mb-40 pb-10 wow fadeInUp2 animated" data-wow-delay='.1s'>
@@ -400,84 +404,68 @@
     <!--cta-area end-->
   </main>
 <!--footer-area start-->
-<footer class="footer-area heding-bg pos-rel pt-100" style="background-image:url('{% static 'img/bg/02.png' %}')">
-    <div class="container">
-        <div class="footer-bottom-area">
-            <div class="row mb-30">
-                <div class="col-xl-2 col-lg-3 col-md-6  wow fadeInUp2 animated" data-wow-delay='.1s'>
-                    <div class="footer__widget mb-30">
-                        <h5 class="semi-title mb-25">Accesos Rápidos</h5>
-                        <ul class="fot-list">
-                            <li><a href="#">Acerca de</a></li>
-                            <li><a href="#">Últimos Eventos</a></li>
-                            <li><a href="#">Como Funciona</a></li>
-                            <li><a href="#">Noticias & Artículos</a></li>
-                            <li><a href="#">Contactanos</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-xl-2 col-lg-3 col-md-6 wow fadeInUp2 animated" data-wow-delay='.3s'>
-                    <div class="footer__widget mb-30 pl-40">
-                        <h5 class="semi-title mb-25">Nuestro Proyecto</h5>
-                        <ul class="fot-list">
-                            <li><a href="#">Educación</a></li>
-                            <li><a href="#">Diseño</a></li>
-                            <li><a href="#">Foto & Video</a></li>
-                            <li><a href="#">Tecnología</a></li>
-                            <li><a href="#">Aplicación</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-6 col-md-6  wow fadeInUp2 animated" data-wow-delay='.5s'>
-                    <div class="footer__widget mb-25 pl-85">
-                        <h5 class="semi-title mb-25">Nuestro Proyecto</h5>
-                        <p class="mb-10">Este Proyecto tiene un alcance nacional
-                            para los emprendimientos locales.</p>
-                        <ul class="fot-list address-list">
-                            <li><a href="#"><i class="far fa-map-marker-alt"></i> Francisco de Orellana, 3er Piso, Ecuador</a></li>
-                            <li><a href="#"><i class="far fa-envelope"></i> eminka_soporte@gmail.com</a></li>
-                            <li><a href="#"><i class="far fa-phone-volume"></i> (+593) 986 514 121</a></li>
-                        </ul>
-                        
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-6 col-md-6  wow fadeInUp2 animated" data-wow-delay='.7s'>
-                    <div class="footer__widget fot_abot mb-30 pl-85">
-                        <h5 class="semi-title mb-25">Apoyanos</h5>
-                        <p class="mb-30">Esta Web tiene autogestión por lo que 
-                            tus aportes son necesasrias para seguir funcionando.</p>
-                            <div class="subscribe-content foter-subscribe">
-                                <form class="subscribe-form" action="{% static 'mail.php' %}">
-                                    <input class="form-control" type="text" placeholder="Ingresa tu Email">
-                                    <button><i class="far fa-arrow-right"></i></button>
-                                </form>
-                            </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--scroll-target-btn-->
-        <a href="#top-menu" class="scroll-target"><i class="far fa-arrow-up"></i></a>
-        <!--scroll-target-btn-->
-        <div class="copy-right-area pt-30">
-            <div class="row align-items-center">
-                <div class="col-xl-7 col-lg-7 col-md-6">
-                    <div class="footer-log mb-30">
-                        <a href="{% url 'home' %}" class="footer-logo mb-30"><img src="{% static 'img/logo/footer-logo1.png' %}"
-                            alt=""></a>
-                    </div>
-                </div>
-                <div class="col-xl-5 col-lg-5 col-md-6">
-                    <div class="copyright mb-30 text-md-right">
-                        <p>© 2023 G5 - G22023 Todos los Derechos Reservados</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-  </footer>
-  <!--footer-area end-->
-  
+<footer class="footer-area heding-bg pos-rel pt-100" style="background-image:url('{% static 'img/bg/02a.png' %}')">
+  <div class="container">
+      <div class="footer-bottom-area">
+          <div class="row mb-30">
+              <div class="col-xl-2 col-lg-3 col-md-6  wow fadeInUp2 animated" data-wow-delay='.1s'>
+                  <div class="footer__widget mb-30">
+                      <h5 class="semi-title mb-25">Accesos Rápidos</h5>
+                      <ul class="fot-list">
+                          <li><a href="{% url 'about' %}">Acerca de</a></li>
+                          <li><a href="{% url 'tienda' %}">Nuestros Servicios</a></li>
+                          <li><a href="{% url 'blog-grid' %}">Tips & Blog</a></li>
+                          <li><a href="{% url 'contactanos' %}">Contactanos</a></li>
+                      </ul>
+                  </div>
+              </div>
+              <div class="col-xl-4 col-lg-6 col-md-6  wow fadeInUp2 animated" data-wow-delay='.5s'>
+                  <div class="footer__widget mb-25 pl-85">
+                      <h5 class="semi-title mb-25">Secretos Ocultos</h5>
+                      <p class="mb-10">Tienda Esotérica Online, velas, amuletos, escencias,
+                        lectura de tarot, limpias y más.
+                      </p>
+                      <ul class="fot-list address-list">
+                          <li><a href="#"><i class="far fa-map-marker-alt"></i> Av. de las Américas 3-111, Cuenca - Ecuador</a></li>
+                          <li><a href="mailto:secretos_ocultos@gmail.com"><i class="far fa-envelope"></i> secretos_ocultos@gmail.com</a></li>
+                          <li><a href="https://api.whatsapp.com/send/?phone=593994100111&text=Quiero%20m%C3%A1s%20informaci%C3%B3n%20de%20Secretos%20Ocultos"><i class="fab fa-whatsapp"></i> (+593) 994 100 111</a></li>
+                      </ul>
+                  </div>
+              </div>
+              <div class="col-xl-4 col-lg-6 col-md-6  wow fadeInUp2 animated" data-wow-delay='.7s'>
+                  <div class="footer__widget fot_abot mb-30 pl-85">
+                      <h5 class="semi-title mb-25">Apoyanos</h5>
+                      <p class="mb-30">Esta Web tiene autogestión por lo que 
+                          tus aportes son necesarias para seguir funcionando.</p>
+                          <div class="subscribe-content foter-subscribe">
+                              <form class="subscribe-form" action="{% static 'mail.php' %}">
+                                  <input class="form-control" type="text" placeholder="Ingresa tu Email">
+                                  <button><i class="far fa-arrow-right"></i></button>
+                              </form>
+                          </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!--scroll-target-btn-->
+      <div class="copy-right-area pt-30">
+          <div class="row align-items-center">
+              <div class="col-xl-7 col-lg-7 col-md-6">
+                  <div class="footer-log mb-30">
+                      <a href="{% url 'home' %}" class="footer-logo mb-30"><img src="{% static 'img/logo/footer-logo1.png' %}"
+                          alt=""></a>
+                  </div>
+              </div>
+              <div class="col-xl-5 col-lg-5 col-md-6">
+                  <div class="copyright mb-30 text-md-right">
+                      <p>© Imashuti 2025 - Todos los Derechos Reservados</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</footer>
+<!--footer-area end-->
 
     <!-- JS here -->
     <script src="{% static 'js/vendor/modernizr-3.5.0.min.js' %}"></script>
