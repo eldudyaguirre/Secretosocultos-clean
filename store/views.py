@@ -21,7 +21,8 @@ def error_404(request, exception):
 def home(request):
     #crear_admin()
     productos = Producto.objects.all()
-    return render(request, 'index.html', {'productos': productos})
+    posts = Post.objects.filter(activo=True)[:2]
+    return render(request, 'index.html', {'productos': productos, 'posts': posts})
 
 def homein(request):
     return render(request, 'index-2.html')
