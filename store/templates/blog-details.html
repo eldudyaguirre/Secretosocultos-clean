@@ -81,7 +81,7 @@
                             <h1 class="page-title wow fadeInUp2 animated" data-wow-delay='.1s'>{{ post.titulo }}</h1>
                             <div class="breadcrumb">
                                 <ul class="breadcrumb-list wow fadeInUp2 animated" data-wow-delay='.3s'>
-                                    <li><a href="{% url 'blog' %}">Blog <i class="far fa-chevron-right"></i></a></li>
+                                    <li><a href="{% url 'blog-details' post.slug %}">Blog <i class="far fa-chevron-right"></i></a></li>
                                     <li><a class="active" href="#">{{ post.titulo }}</a></li>
                                 </ul>
                             </div>
