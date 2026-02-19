@@ -1,6 +1,6 @@
 from django.db import models
-from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+
 
 class CategoriaBlog(models.Model):
     nombre = models.CharField(max_length=100, unique=True)
@@ -20,10 +20,14 @@ class Post(models.Model):
 
     titulo = models.CharField(max_length=200)
     slug = models.SlugField(unique=True)
+
     resumen = models.TextField(blank=True)
     contenido = models.TextField()
+
+    # ✅ Imagen en Cloudinary
     imagen = CloudinaryField("imagen", blank=True, null=True)
 
+    # ✅ Autor fijo (solo 2 opciones)
     autor_blog = models.CharField(
         max_length=20,
         choices=AUTORES,
@@ -46,8 +50,10 @@ class Post(models.Model):
     def __str__(self):
         return self.titulo
 
-def get_autor_imagen(self):
-    if self.autor_blog == "secretos":
-        return "img/events/35x35secretosocultos.jpg"
-    elif self.autor_blog == "jonas":
-        return "img/events/35x35jonasdante.jpg"
+    # ✅ Imagen estática del autor
+    def get_autor_imagen(self):
+        if self.autor_blog == "secretos":
+            return "img/events/35x35secretosocultos.jpg"
+        elif self.autor_blog == "jonas":
+            return "img/events/35x35jonasdante.jpg"
+        return "img/events/default-author.jpg"
