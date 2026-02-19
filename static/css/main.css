@@ -2437,7 +2437,6 @@ section-title
 
 .main-head-02 {
   position: relative;
-  box-shadow: none !important;
 }
 @media (max-width: 767px) {
   .main-head-02 {
