@@ -46,47 +46,29 @@
     <!-- header-area start -->
     <header id="top-menu">
         <div class="main-header-area main-head-02">
-            <div class="header-top-area heding-bg pt-15 pb-15 d-none d-lg-block">
-            <div class="container custom-container">
-                <div class="row align-items-center">
-                    <div class="col-xl-6 col-lg-6">
-                        <div class="top-cta">
-                            <span class="media-link"><i class="fab fa-whatsapp"></i>+593 99410 - 0111</span>
-                            <span class="media-link"><i class="far fa-map-marker-alt"></i>Av. de las Américas y Abraham Sarmiento,
-                          Cuenca - Ecuador</span>
+                {% if user.is_authenticated %}
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-xl-2 col-lg-2 col-md-4 col-4">
+                        <div class="logo">
+                            <a class="logo-img" href="{% url 'home' %}"><img src="{% static 'img/logo/header-logo-azul-vertical.png' %}"
+                                    alt=""></a>
                         </div>
-                    </div>
-                    <div class="col-xl-6 col-lg-6 d-flex justify-content-end">
-                        {% if user.is_authenticated %}
-                        <div class="login-area">
-                            <a class="media-link" href="#"><i class="far fa-user"></i> Bienvenid@ {{ user.first_name }} </a>
-                        </div>
-                        <div class="login-area">
-                            <a class="media-link" href="{% url 'logout' %}"><i class="fa fa-sign-out"></i> Salir</a> 
-                        </div>
-                        {% else %}
-                        <div class="login-area">
-                            <a class="media-link" href="{% url 'signin' %}"><i class="far fa-lock-alt"></i>Ingresar</a>
-                        </div>
-                        <div class="login-area">
-                            <a class="media-link" href="{% url 'signup' %}"><i class="far fa-user-alt"></i> Registrate</a>
-                        </div>
-                        {% endif %}
-                            <div class="top-right-nav">
-                                <ul>
-                                    <li> <a href="https://www.facebook.com/jonas.dante.5"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li> <a href="https://www.tiktok.com/@jonas_tarot"><i class="fa-brands fa-tiktok"></i></a></li>
-                                    <li> <a href="https://www.instagram.com/tienda.esoterismo?igsh=YW4wcnM4bW82dnVu"><i class="fa-brands fa-instagram"></i></a></li>
-                                </ul>
-                            </div>
                     </div>
                 </div>
+                {% else %}
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-xl-2 col-lg-2 col-md-4 col-4">
+                        <div class="logo">
+                            <a class="logo-img" href="{% url 'home' %}"><img src="{% static 'img/logo/header-logo-azul-vertical.png' %}"
+                                    alt=""></a>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
             </div>
-        </div>
         </div>
     </header>
     <!-- header-area end -->
-
 
     <main>
         
