@@ -148,14 +148,20 @@ def blogdetails(request, slug):
     post = get_object_or_404(Post, slug=slug, activo=True)
     categorias = CategoriaBlog.objects.filter(activa=True)
     posts_recientes = Post.objects.filter(activo=True).exclude(id=post.id)[:4]
-    return render(request, "blog-details.html", {"post": post})
+    return render(request, "blog-details.html", {"post": post,
+                                                 "categorias": categorias,
+                                                 "posts_recientes": posts_recientes})
 
 def bloggrid(request):
     posts = Post.objects.filter(activo=True)
+    categorias = CategoriaBlog.objects.filter(activa=True)
+    posts_recientes = Post.objects.filter(activo=True)[:4]
+
     return render(request, "blog-grid.html", {
-        "post": post,
+        "posts": posts,
         "categorias": categorias,
-        "posts_recientes": posts_recientes})
+        "posts_recientes": posts_recientes
+    })
 
 def blogstandard(request):
     return render(request, 'blog-standard.html')
