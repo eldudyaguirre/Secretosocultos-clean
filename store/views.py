@@ -139,7 +139,7 @@ def contactanos(request):
 def catalog(request):
     return render(request, 'catalog.html')
 
-def blogdetails(request):
+def blogdetails(request, slug):
     post = get_object_or_404(Post, slug=slug, activo=True)
     return render(request, "blog-details.html", {"post": post})
 
@@ -180,8 +180,6 @@ def projectvideo(request):
 def resetpassword(request):
     return render(request, 'reset-password.html')
 
-def tienda(request):
-    return render(request, 'tienda.html')
 
 def tarot(request):
     return render(request, 'tarot.html')
