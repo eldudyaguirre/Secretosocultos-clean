@@ -75,7 +75,11 @@
             <div class="row">
                 <div class="col-xl-8 col-lg-8 col-md-12 mb-40">
                     <div class="blogs__thumb--img white-bg pb-25">
-                        <img src="{% static 'img/blog/11.jpg' %}" alt="">
+                        {% if post.imagen %}
+                        <img src="{{ post.imagen.url }}" alt="{{ post.titulo }}">
+                        {% else %}
+                            <img src="{% static 'img/blog/default.jpg' %}" alt="Default">
+                        {% endif %}
                    </div>
                     <div class="blogs-details-content-area white-bg">
                         <div class="blogs blogs-03 white-bg wow fadeInUp2 animated" data-wow-delay='.1s'>
