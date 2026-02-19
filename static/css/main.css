@@ -2457,10 +2457,12 @@ section-title
 .main-head-02.sticky {
   background: #ffffff;
   position: fixed;
+  box-shadow: none !important;
 }
 .main-head-02a.sticky {
   background: #181c2b;
   position: fixed;
+  box-shadow: none !important;
 }
 .main-head-02.sticky .main-menu-02 ul li > a {
   color: #1a1e2d;
