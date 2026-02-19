@@ -23,10 +23,8 @@ class Post(models.Model):
     resumen = models.TextField(blank=True)
     contenido = models.TextField()
 
-    # Imagen en Cloudinary
     imagen = CloudinaryField("imagen", blank=True, null=True)
 
-    # Autor fijo
     autor_blog = models.CharField(
         max_length=20,
         choices=AUTORES,
@@ -49,12 +47,7 @@ class Post(models.Model):
     def __str__(self):
         return self.titulo
 
-    # ✅ Imagen estática del autor
     def get_autor_imagen(self):
         if self.autor_blog == "secretos":
             return "img/events/35x35secretosocultos.jpg"
         return "img/events/35x35jonasdante.jpg"
-
-    # ✅ Nombre bonito para mostrar
-    def get_autor_blog_display(self):
-        return dict(self.AUTORES).get(self.autor_blog)

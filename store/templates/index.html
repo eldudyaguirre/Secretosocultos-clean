@@ -384,92 +384,73 @@
                       </div>
                   </div>
               </div>
-              <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp2 animated" data-wow-delay='.3s'>
-                    <div class="blogs mb-30">
+                    {% for post in posts %}
+                    <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp2 animated">
 
-                        <!-- Imagen -->
-                        <div class="blogs__thumb pos-rel mb-45">
-                            <div class="blogs__thumb--img">
-                                {% if post.imagen %}
-                                    <img src="{{ post.imagen.url }}" alt="{{ post.titulo }}">
-                                {% else %}
-                                    <img src="{% static 'img/blog/default.jpg' %}" alt="Default">
-                                {% endif %}
-                            </div>
+                        <div class="blogs mb-30">
 
-                            <!-- Categoría -->
-                            <a class="blog-tag" href="#">
-                                {{ post.categoria.nombre }}
-                            </a>
-                        </div>
+                            <!-- Imagen -->
+                            <div class="blogs__thumb pos-rel mb-45">
+                                <div class="blogs__thumb--img">
+                                    {% if post.imagen %}
+                                        <img src="{{ post.imagen.url }}" alt="{{ post.titulo }}">
+                                    {% else %}
+                                        <img src="{% static 'img/blog/default.jpg' %}" alt="Default">
+                                    {% endif %}
+                                </div>
 
-                        <!-- Contenido -->
-                        <div class="blogs__content">
-
-                            <!-- Meta -->
-                            <div class="blogs__content--meta mb-15">
-                                <span>
-                                    <i class="far fa-calendar-alt"></i>
-                                    {{ post.creado|date:"d M Y" }}
-                                </span>
-
-                                <span>
-                                    <i class="far fa-comment"></i>
-                                    Comentarios (0)
-                                </span>
-                            </div>
-
-                            <!-- Título -->
-                            <h4 class="mb-20">
-                                <a href="{% url 'blog-details' post.slug %}">
-                                    {{ post.titulo }}
+                                <!-- Categoría -->
+                                <a class="blog-tag" href="#">
+                                    {{ post.categoria.nombre }}
                                 </a>
-                            </h4>
+                            </div>
 
-                            <!-- Autor + botón -->
-                            <ul class="project-manager">
-                                {% if post.autor %}
-                                <li>
-                                    <a href="#">
-                                        <img src="{% static post.get_autor_imagen %}">
-                                        <span>{{ post.get_autor_blog_display }}</span>
+                            <!-- Contenido -->
+                            <div class="blogs__content">
+
+                                <!-- Meta -->
+                                <div class="blogs__content--meta mb-15">
+                                    <span>
+                                        <i class="far fa-calendar-alt"></i>
+                                        {{ post.creado|date:"d M Y" }}
+                                    </span>
+
+                                    <span>
+                                        <i class="far fa-comment"></i>
+                                        Comentarios (0)
+                                    </span>
+                                </div>
+
+                                <!-- Título -->
+                                <h4 class="mb-20">
+                                    <a href="{% url 'blog-details' post.slug %}">
+                                        {{ post.titulo }}
                                     </a>
-                                </li>
-                                {% endif %}
+                                </h4>
 
-                                <li>
-                                    <a class="more_btn_02" href="{% url 'blog-details' post.slug %}">
-                                        Leer más <i class="far fa-arrow-right"></i>
-                                    </a>
-                                </li>
-                            </ul>
+                                <!-- Autor + botón -->
+                                <ul class="project-manager">
 
+                                    <li>
+                                        <a href="#">
+                                            <img src="{% static post.get_autor_imagen %}">
+                                            <span>{{ post.get_autor_blog_display }}</span>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a class="more_btn_02" href="{% url 'blog-details' post.slug %}">
+                                            Leer más <i class="far fa-arrow-right"></i>
+                                        </a>
+                                    </li>
+
+                                </ul>
+
+                            </div>
                         </div>
+
                     </div>
-              </div>
-              <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp2 animated" data-wow-delay='.5s'>
-                  <div class="blogs mb-30 ml-15">
-                      <div class="blogs__thumb pos-rel mb-45">
-                         <div class="blogs__thumb--img">
-                              <img src="{% static 'img/blog/02-blog.jpg' %}" alt="">
-                         </div>
-                          <a class="blog-tag" href="  {% url 'blog-grid' %}">Educación</a>
-                      </div>
-                      <div class="blogs__content">
-                          <div class="blogs__content--meta mb-15">
-                              <span><i class="far fa-calendar-alt"></i> 15 Nov 2025</span>
-                              <span><i class="far fa-comment"></i> Comentarios (06)</span>
-                          </div>
-                          <h4 class="mb-20"><a href="  {% url 'blog-grid' %}">El colgado: Ver las cosas “al revés” para entenderlas mejor.</a></h4>
-                          <ul class="project-manager">
-                              <li><a href="#"><img src="{% static 'img/events/35x35jonasdante.jpg' %}" alt="">
-                                      <span>Jonás Dante</span></a></li>
-                              <li>
-                                  <a class="more_btn_02" href="  {% url 'blog-grid' %}">Leer más <i class="far fa-arrow-right"></i></a>
-                              </li>
-                          </ul>
-                      </div>
-                  </div>
+                    {% endfor %}
               </div>
           </div>
       </div>

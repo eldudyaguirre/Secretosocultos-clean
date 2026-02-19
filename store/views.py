@@ -19,10 +19,14 @@ def error_404(request, exception):
     return render(request, '404.html',{})
 
 def home(request):
-    #crear_admin()
-    productos = Producto.objects.all()
-    posts = Post.objects.filter(activo=True)[:2]
-    return render(request, 'index.html', {'productos': productos, 'posts': posts})
+    productos = Producto.objects.filter(activo=True)
+
+    posts = Post.objects.filter(activo=True).order_by("-creado")[:2]
+
+    return render(request, "index.html", {
+        "productos": productos,
+        "posts": posts
+    })
 
 def homein(request):
     return render(request, 'index-2.html')
