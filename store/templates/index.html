@@ -431,8 +431,8 @@
                                 {% if post.autor %}
                                 <li>
                                     <a href="#">
-                                        <img src="{% static 'img/events/35x35secretosocultos.jpg' %}" alt="">
-                                        <span>{{ post.autor.username }}</span>
+                                        <img src="{% static post.get_autor_imagen %}">
+                                        <span>{{ post.get_autor_blog_display }}</span>
                                     </a>
                                 </li>
                                 {% endif %}

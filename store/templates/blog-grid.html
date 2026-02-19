@@ -104,7 +104,7 @@
 
                     <div class="blogs mb-30">
 
-                        <!-- Imagen -->
+                        <!-- ✅ Imagen del Post -->
                         <div class="blogs__thumb pos-rel mb-45">
                             <div class="blogs__thumb--img">
 
@@ -116,46 +116,63 @@
 
                             </div>
 
-                            <!-- Categoría -->
+                            <!-- ✅ Categoría -->
                             <a class="blog-tag" href="#">
                                 {{ post.categoria.nombre }}
                             </a>
                         </div>
 
-                        <!-- Contenido -->
+                        <!-- ✅ Contenido -->
                         <div class="blogs__content">
 
-                            <!-- Meta -->
+                            <!-- ✅ Meta: Fecha + Comentarios -->
                             <div class="blogs__content--meta mb-15">
+
+                                <!-- Fecha -->
                                 <span>
                                     <i class="far fa-calendar-alt"></i>
                                     {{ post.creado|date:"d M Y" }}
                                 </span>
 
-                                {% if post.autor %}
+                                <!-- Comentarios (placeholder) -->
                                 <span>
-                                    <i class="far fa-user"></i>
-                                    {{ post.autor.username }}
+                                    <i class="far fa-comment"></i>
+                                    Comentarios (00)
                                 </span>
-                                {% endif %}
+
                             </div>
 
-                            <!-- Título -->
+                            <!-- ✅ Título -->
                             <h4 class="mb-20">
                                 <a href="{% url 'blog-details' post.slug %}">
                                     {{ post.titulo }}
                                 </a>
                             </h4>
 
-                            <!-- Resumen -->
+                            <!-- ✅ Resumen -->
                             <p>
-                                {{ post.resumen|truncatewords:20 }}
+                                {{ post.resumen|truncatewords:18 }}
                             </p>
 
-                            <!-- Leer más -->
-                            <a class="more_btn_02" href="{% url 'blog-details' post.slug %}">
-                                Leer más <i class="far fa-arrow-right"></i>
-                            </a>
+                            <!-- ✅ Autor + Botón -->
+                            <ul class="project-manager">
+
+                                <!-- Autor con imagen estática -->
+                                <li>
+                                    <a href="#">
+                                        <img src="{% static post.get_autor_imagen %}" alt="Autor">
+                                        <span>{{ post.get_autor_blog_display }}</span>
+                                    </a>
+                                </li>
+
+                                <!-- Leer más -->
+                                <li>
+                                    <a class="more_btn_02" href="{% url 'blog-details' post.slug %}">
+                                        Leer más <i class="far fa-arrow-right"></i>
+                                    </a>
+                                </li>
+
+                            </ul>
 
                         </div>
 
@@ -163,10 +180,13 @@
                 </div>
 
                 {% empty %}
-                    <p>No hay posts publicados todavía 😢</p>
+                    <div class="col-12 text-center">
+                        <h4>No hay posts publicados todavía 😢</h4>
+                    </div>
                 {% endfor %}
 
             </div>
+
         </div>
     </section>
     <!--blog-area end-->

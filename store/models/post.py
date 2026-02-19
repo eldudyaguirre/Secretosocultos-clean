@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from cloudinary.models import CloudinaryField
 
 class CategoriaBlog(models.Model):
     nombre = models.CharField(max_length=100, unique=True)
@@ -11,23 +12,28 @@ class CategoriaBlog(models.Model):
 
 
 class Post(models.Model):
+
+    AUTORES = [
+        ("secretos", "Secretos Ocultos"),
+        ("jonas", "Jonás Dante"),
+    ]
+
     titulo = models.CharField(max_length=200)
     slug = models.SlugField(unique=True)
     resumen = models.TextField(blank=True)
     contenido = models.TextField()
-    imagen = models.ImageField(upload_to="blog/", blank=True, null=True)
+    imagen = CloudinaryField("imagen", blank=True, null=True)
+
+    autor_blog = models.CharField(
+        max_length=20,
+        choices=AUTORES,
+        default="secretos"
+    )
 
     categoria = models.ForeignKey(
         CategoriaBlog,
         on_delete=models.PROTECT,
         related_name="posts"
-    )
-
-    autor = models.ForeignKey(
-        User,
-        on_delete=models.SET_NULL,
-        null=True,
-        blank=True
     )
 
     activo = models.BooleanField(default=True)
@@ -39,3 +45,9 @@ class Post(models.Model):
 
     def __str__(self):
         return self.titulo
+
+def get_autor_imagen(self):
+    if self.autor_blog == "secretos":
+        return "img/events/35x35secretosocultos.jpg"
+    elif self.autor_blog == "jonas":
+        return "img/events/35x35jonasdante.jpg"
