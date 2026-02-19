@@ -6378,7 +6378,7 @@ ul.timeline li.timeline-list:hover::after {
 }
 
 .latest-comments li {
-  padding-bottom: 40px;
+  padding-bottom: none;
 }
 .latest-comments li.children {
   margin-left: 105px;
@@ -6389,7 +6389,7 @@ ul.timeline li.timeline-list:hover::after {
   }
 }
 .latest-comments li:last-child {
-  border-bottom: 2px solid #e7e7e7;
+  border-bottom: none;
 }
 
 .post-form-area .input-text {
