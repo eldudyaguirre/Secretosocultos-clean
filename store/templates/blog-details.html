@@ -78,7 +78,7 @@
                         {% if post.imagen %}
                         <img src="{{ post.imagen.url }}" 
                             alt="{{ post.titulo }}" 
-                            style="width:770px; height:435px; object-fit:cover;">
+                            style="width:100%; max-width:770px; height:435px; object-fit:cover;">
                         {% else %}
                             <img src="{% static 'img/blog/11.jpg' %}" alt="Default">
                         {% endif %}
@@ -89,14 +89,14 @@
                                 <a class="blog-tag" href="#">{{ post.categoria.nombre }}</a>
                             </div>
                             <div class="blogs__content blogs-03__content">
-                                <h3 class="mb-20"><a href="{% url 'blog-details' post.slug %}">Decision Inspire Design With Ott Storch When Idea How To Space And Kern Punctuation</a></h3>
+                                <h3 class="mb-20"><a href="#"> {{ post.titulo }}</a></h3>
                                 <div class="blogs__content--meta">
-                                    <span><i class="far fa-user-circle"></i> By Somalia Doe</span>
-                                    <span><i class="far fa-calendar-alt"></i> 05 Nov 2020</span>
+                                    <span><i class="far fa-user-circle"></i> Por {{ post.get_autor_blog_display }}</span>
+                                    <span><i class="far fa-calendar-alt"></i>  {{ post.creado|date:"d M Y" }}</span>
                                     <span><i class="far fa-comment"></i> Comment (03)</span>
                                     <span><i class="far fa-heart"></i> Like (1K)</span>
                                 </div>
-                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas</p>
+                                <p>{{ post.contenido|linebreaks }}</p>
                             </div>
                         </div>
                         <div class="blogs-details-text mb-35 wow fadeInUp2 animated" data-wow-delay='.1s'>
