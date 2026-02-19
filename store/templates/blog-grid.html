@@ -98,222 +98,74 @@
        <section class="blog-area pt-130 pb-100">
         <div class="container">
             <div class="row">
-                <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp2 animated" data-wow-delay='.1s'>
+
+                {% for post in posts %}
+                <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp2 animated">
+
                     <div class="blogs mb-30">
+
+                        <!-- Imagen -->
                         <div class="blogs__thumb pos-rel mb-45">
-                           <div class="blogs__thumb--img">
-                                <img src="{% static 'img/blog/04.jpg' %}"  alt="">
-                           </div>
-                            <a class="blog-tag" href="{% url 'blog-details' %}">Web Design</a>
-                        </div>
-                        <div class="blogs__content">
-                            <div class="blogs__content--meta mb-15">
-                                <span><i class="far fa-calendar-alt"></i> 05 Nov 2020</span>
-                                <span><i class="far fa-comment"></i> Comment (03)</span>
+                            <div class="blogs__thumb--img">
+
+                                {% if post.imagen %}
+                                    <img src="{{ post.imagen.url }}" alt="{{ post.titulo }}">
+                                {% else %}
+                                    <img src="{% static 'img/blog/default.jpg' %}" alt="Default">
+                                {% endif %}
+
                             </div>
-                            <h4 class="mb-20"><a href="{% url 'blog-details' %}">Inspired Design Decisions With Neville Brodye</a></h4>
-                            <ul class="project-manager">
-                                <li><a href="#"><img src="{% static 'img/blog/04.png' %}" alt="">
-                                        <span>David Zon</span></a></li>
-                                <li>
-                                    <a class="more_btn_02" href="{% url 'blog-details' %}">Read more <i class="far fa-arrow-right"></i></a>
-                                </li>
-                            </ul>
+
+                            <!-- Categoría -->
+                            <a class="blog-tag" href="#">
+                                {{ post.categoria.nombre }}
+                            </a>
                         </div>
+
+                        <!-- Contenido -->
+                        <div class="blogs__content">
+
+                            <!-- Meta -->
+                            <div class="blogs__content--meta mb-15">
+                                <span>
+                                    <i class="far fa-calendar-alt"></i>
+                                    {{ post.creado|date:"d M Y" }}
+                                </span>
+
+                                {% if post.autor %}
+                                <span>
+                                    <i class="far fa-user"></i>
+                                    {{ post.autor.username }}
+                                </span>
+                                {% endif %}
+                            </div>
+
+                            <!-- Título -->
+                            <h4 class="mb-20">
+                                <a href="{% url 'blog-details' post.slug %}">
+                                    {{ post.titulo }}
+                                </a>
+                            </h4>
+
+                            <!-- Resumen -->
+                            <p>
+                                {{ post.resumen|truncatewords:20 }}
+                            </p>
+
+                            <!-- Leer más -->
+                            <a class="more_btn_02" href="{% url 'blog-details' post.slug %}">
+                                Leer más <i class="far fa-arrow-right"></i>
+                            </a>
+
+                        </div>
+
                     </div>
                 </div>
-                <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp2 animated" data-wow-delay='.3s'>
-                    <div class="blogs mb-30">
-                        <div class="blogs__thumb pos-rel mb-45">
-                           <div class="blogs__thumb--img">
-                                <img src="{% static 'img/blog/01.jpg' %}" alt="">
-                           </div>
-                            <a class="blog-tag" href="{% url 'blog-details' %}">Education</a>
-                        </div>
-                        <div class="blogs__content">
-                            <div class="blogs__content--meta mb-15">
-                                <span><i class="far fa-calendar-alt"></i> 05 Nov 2020</span>
-                                <span><i class="far fa-comment"></i> Comment (03)</span>
-                            </div>
-                            <h4 class="mb-20"><a href="{% url 'blog-details' %}">How Make Cross-Browser Testing More Lambda.</a></h4>
-                            <ul class="project-manager">
-                                <li><a href="#"><img src="{% static 'img/blog/03.png' %}" alt="">
-                                        <span>David Zon</span></a></li>
-                                <li>
-                                    <a class="more_btn_02" href="{% url 'blog-details' %}">Read more <i class="far fa-arrow-right"></i></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp2 animated" data-wow-delay='.5s'>
-                    <div class="blogs mb-30">
-                        <div class="blogs__thumb pos-rel mb-45">
-                           <div class="blogs__thumb--img">
-                                <img src="{% static 'img/blog/02.jpg' %}" alt="">
-                           </div>
-                            <a class="blog-tag" href="{% url 'blog-details' %}">Technology</a>
-                        </div>
-                        <div class="blogs__content">
-                            <div class="blogs__content--meta mb-15">
-                                <span><i class="far fa-calendar-alt"></i> 05 Nov 2020</span>
-                                <span><i class="far fa-comment"></i> Comment (03)</span>
-                            </div>
-                            <h4 class="mb-20"><a href="{% url 'blog-details' %}">Build A Simple Crypto Curr See Nockchcin Node</a></h4>
-                            <ul class="project-manager">
-                                <li><a href="#"><img src="{% static 'img/blog/04.png' %}" alt="">
-                                        <span>David Zon</span></a></li>
-                                <li>
-                                    <a class="more_btn_02" href="{% url 'blog-details' %}">Read more <i class="far fa-arrow-right"></i></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp2 animated" data-wow-delay='.1s'>
-                    <div class="blogs mb-30">
-                        <div class="blogs__thumb pos-rel mb-45">
-                           <div class="blogs__thumb--img">
-                                <img src="{% static 'img/blog/05.jpg' %}" alt="">
-                           </div>
-                            <a class="blog-tag" href="{% url 'blog-details' %}">Web Design</a>
-                        </div>
-                        <div class="blogs__content">
-                            <div class="blogs__content--meta mb-15">
-                                <span><i class="far fa-calendar-alt"></i> 05 Nov 2020</span>
-                                <span><i class="far fa-comment"></i> Comment (03)</span>
-                            </div>
-                            <h4 class="mb-20"><a href="{% url 'blog-details' %}">Inspired Design Decisions With Neville Brodye</a></h4>
-                            <ul class="project-manager">
-                                <li><a href="#"><img src="{% static 'img/blog/04.png' %}" alt="">
-                                        <span>David Zon</span></a></li>
-                                <li>
-                                    <a class="more_btn_02" href="{% url 'blog-details' %}">Read more <i class="far fa-arrow-right"></i></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp2 animated" data-wow-delay='.2s'>
-                    <div class="blogs mb-30">
-                        <div class="blogs__thumb pos-rel mb-45">
-                           <div class="blogs__thumb--img">
-                                <img src="{% static 'img/blog/06.jpg' %}" alt="">
-                           </div>
-                            <a class="blog-tag" href="{% url 'blog-details' %}">Education</a>
-                        </div>
-                        <div class="blogs__content">
-                            <div class="blogs__content--meta mb-15">
-                                <span><i class="far fa-calendar-alt"></i> 05 Nov 2020</span>
-                                <span><i class="far fa-comment"></i> Comment (03)</span>
-                            </div>
-                            <h4 class="mb-20"><a href="{% url 'blog-details' %}">How Make Cross-Browser Testing More Lambda.</a></h4>
-                            <ul class="project-manager">
-                                <li><a href="#"><img src="{% static 'img/blog/03.png' %}" alt="">
-                                        <span>David Zon</span></a></li>
-                                <li>
-                                    <a class="more_btn_02" href="{% url 'blog-details' %}">Read more <i class="far fa-arrow-right"></i></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp2 animated" data-wow-delay='.5s'>
-                    <div class="blogs mb-30">
-                        <div class="blogs__thumb pos-rel mb-45">
-                           <div class="blogs__thumb--img">
-                                <img src="{% static 'img/blog/07.jpg' %}" alt="">
-                           </div>
-                            <a class="blog-tag" href="{% url 'blog-details' %}">Technology</a>
-                        </div>
-                        <div class="blogs__content">
-                            <div class="blogs__content--meta mb-15">
-                                <span><i class="far fa-calendar-alt"></i> 05 Nov 2020</span>
-                                <span><i class="far fa-comment"></i> Comment (03)</span>
-                            </div>
-                            <h4 class="mb-20"><a href="{% url 'blog-details' %}">Build A Simple Crypto Curr See Nockchcin Node</a></h4>
-                            <ul class="project-manager">
-                                <li><a href="#"><img src="{% static 'img/blog/04.png' %}" alt="">
-                                        <span>David Zon</span></a></li>
-                                <li>
-                                    <a class="more_btn_02" href="{% url 'blog-details' %}">Read more <i class="far fa-arrow-right"></i></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp2 animated" data-wow-delay='.1s'>
-                    <div class="blogs mb-30">
-                        <div class="blogs__thumb pos-rel mb-45">
-                           <div class="blogs__thumb--img">
-                                <img src="{% static 'img/blog/08.jpg' %}"alt="">
-                           </div>
-                            <a class="blog-tag" href="{% url 'blog-details' %}">Web Design</a>
-                        </div>
-                        <div class="blogs__content">
-                            <div class="blogs__content--meta mb-15">
-                                <span><i class="far fa-calendar-alt"></i> 05 Nov 2020</span>
-                                <span><i class="far fa-comment"></i> Comment (03)</span>
-                            </div>
-                            <h4 class="mb-20"><a href="{% url 'blog-details' %}">Inspired Design Decisions With Neville Brodye</a></h4>
-                            <ul class="project-manager">
-                                <li><a href="#"><img src="{% static 'img/blog/04.png' %}" alt="">
-                                        <span>David Zon</span></a></li>
-                                <li>
-                                    <a class="more_btn_02" href="{% url 'blog-details' %}">Read more <i class="far fa-arrow-right"></i></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp2 animated" data-wow-delay='.3s'>
-                    <div class="blogs mb-30">
-                        <div class="blogs__thumb pos-rel mb-45">
-                           <div class="blogs__thumb--img">
-                                <img src="{% static 'img/blog/09.jpg' %}" alt="">
-                           </div>
-                            <a class="blog-tag" href="{% url 'blog-details' %}">Education</a>
-                        </div>
-                        <div class="blogs__content">
-                            <div class="blogs__content--meta mb-15">
-                                <span><i class="far fa-calendar-alt"></i> 05 Nov 2020</span>
-                                <span><i class="far fa-comment"></i> Comment (03)</span>
-                            </div>
-                            <h4 class="mb-20"><a href="{% url 'blog-details' %}">How Make Cross-Browser Testing More Lambda.</a></h4>
-                            <ul class="project-manager">
-                                <li><a href="#"><img src="{% static 'img/blog/03.png' %}" alt="">
-                                        <span>David Zon</span></a></li>
-                                <li>
-                                    <a class="more_btn_02" href="{% url 'blog-details' %}">Read more <i class="far fa-arrow-right"></i></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp2 animated" data-wow-delay='.5s'>
-                    <div class="blogs mb-30">
-                        <div class="blogs__thumb pos-rel mb-45">
-                           <div class="blogs__thumb--img">
-                                <img src="{% static 'img/blog/10.jpg' %}"alt="">
-                           </div>
-                            <a class="blog-tag" href="{% url 'blog-details' %}">Technology</a>
-                        </div>
-                        <div class="blogs__content">
-                            <div class="blogs__content--meta mb-15">
-                                <span><i class="far fa-calendar-alt"></i> 05 Nov 2020</span>
-                                <span><i class="far fa-comment"></i> Comment (03)</span>
-                            </div>
-                            <h4 class="mb-20"><a href="{% url 'blog-details' %}">Build A Simple Crypto Curr See Nockchcin Node</a></h4>
-                            <ul class="project-manager">
-                                <li><a href="#"><img src="{% static 'img/blog/04.png' %}" alt="">
-                                        <span>David Zon</span></a></li>
-                                <li>
-                                    <a class="more_btn_02" href="{% url 'blog-details' %}">Read more <i class="far fa-arrow-right"></i></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+
+                {% empty %}
+                    <p>No hay posts publicados todavía 😢</p>
+                {% endfor %}
+
             </div>
         </div>
     </section>
