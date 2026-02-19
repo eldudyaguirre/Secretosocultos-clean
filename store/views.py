@@ -125,7 +125,7 @@ def generar_codigo_pedido():
 
 def tienda(request):
     productos = Producto.objects.filter(activo=True)
-    return render(request, "store/tienda.html", {
+    return render(request, "tienda.html", {
         "productos": productos
     })
 
