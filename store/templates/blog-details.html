@@ -14,6 +14,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/iconblanco.png' %}">
 
     <!-- CSS here -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/animate.css' %}">
@@ -123,19 +124,42 @@
                             </div>
                         </div>
                         <div class="author grey-bg mb-50 wow fadeInUp2 animated" data-wow-delay='.1s'>
-                            <div class="author__avatar">
-                                <img src="{% static 'img/blog/06.png' %}" alt="">
-                            </div>
-                            <div class="author__text">
-                                <h4>Eugene A. Pearson</h4>
-                                <p>But must explain to you how all this mistake idea deounciasure and praising pain was born and will give you comete account the system</p>
-                                <div class="post-share-icon">
-                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="#"><i class="fab fa-youtube"></i></a>
-                                    <a href="#"><i class="fab fa-behance"></i></a>
+                            {% if post.autor_blog == "jonas" %}
+                                <div class="author__avatar">
+                                    <img src="{% static 'img/team/01.jpg' %}" alt="", style="width:100%; max-width:160px; height:160px; object-fit:cover;">
+                                    
                                 </div>
-                            </div>
+                                <div class="author__text">
+                                    <h4>Jonas Dante</h4>
+
+                                        <p>Tarotista, guía espiritual y creador de Secretos Ocultos.
+                                            Comparte rituales, lecturas y sabiduría ancestral para ayudarte a ver más allá del velo.
+                                        </p>
+                                        <div class="post-share-icon">
+                                            <a href="https://www.facebook.com/jonas.dante.5"><i class="fab fa-facebook-f"></i></a>
+                                            <a href="https://www.instagram.com/tienda.esoterismo"><i class="fab fa-instagram"></i></a>
+                                            <a href="mailto:secretos_ocultos@gmail.com"><i class="far fa-envelope"></i></a>
+                                            <a href="https://api.whatsapp.com/send/?phone=593994100111"><i class="fab fa-whatsapp"></i></a>                                            
+                                        </div>
+                                </div>
+                            {% else %}
+                                <div class="author__avatar">
+                                    <img src="{% static 'img/team/04.jpg' %}" alt="">
+                                </div>
+                                <div class="author__text">
+                                    <h4>Secretos Ocultos</h4>
+
+                                        <p>Espacio dedicado al misterio, la magia y el conocimiento oculto.
+                                            Aquí compartimos rituales, consejos espirituales y herramientas para tu camino interior.
+                                        </p>
+                                        <div class="post-share-icon">
+                                            <a href="https://www.facebook.com/jonas.dante.5"><i class="fab fa-facebook-f"></i></a>
+                                            <a href="https://www.instagram.com/tienda.esoterismo"><i class="fab fa-instagram"></i></a>
+                                            <a href="https://www.tiktok.com/@jonas_tarot"><i class="fab fa-tiktok"></i></a>
+                                            <a href="https://api.whatsapp.com/send/?phone=593994100111"><i class="fab fa-whatsapp"></i></a>                                            
+                                        </div>
+                                </div>
+                            {% endif %}
                         </div>
                         <div class="blog-post-area mb-45  wow fadeInUp2 animated" data-wow-delay='.1s'>
                             <div class="row">
