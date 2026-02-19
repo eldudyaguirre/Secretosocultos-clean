@@ -148,9 +148,17 @@ def blogdetails(request, slug):
     post = get_object_or_404(Post, slug=slug, activo=True)
     return render(request, "blog-details.html", {"post": post})
 
-def bloggrid(request):
+def bloggrid(request, categoria_slug=None):
+    categorias = CategoriaBlog.objects.filter(activa=True)
     posts = Post.objects.filter(activo=True)
-    return render(request, "blog-grid.html", {"posts": posts})
+
+    if categoria_slug:
+        posts = posts.filter(categoria__slug=categoria_slug)
+
+    return render(request, "blog-grid.html", {
+        "posts": posts,
+        "categorias": categorias
+    })
 
 def blogstandard(request):
     return render(request, 'blog-standard.html')
