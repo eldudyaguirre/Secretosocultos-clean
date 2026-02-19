@@ -76,8 +76,9 @@
                 <div class="col-xl-8 col-lg-8 col-md-12 mb-40">
                     <div class="blogs__thumb--img white-bg pb-25">
                         {% if post.imagen %}
-                        <img src="{{ post.imagen.url }}?c_fill,w_770,h_435" 
-                            alt="{{ post.titulo }}">
+                        <img src="{{ post.imagen.url }}" 
+                            alt="{{ post.titulo }}" 
+                            style="width:770px; height:435px; object-fit:cover;">
                         {% else %}
                             <img src="{% static 'img/blog/11.jpg' %}" alt="Default">
                         {% endif %}
