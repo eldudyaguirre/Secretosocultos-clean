@@ -258,16 +258,12 @@
                         </div>
                         <div class="widget mb-40 wow fadeInUp2 animated" data-wow-delay='.1s'>
                             <ul class="widget-list">
-                                {% for categoria in categorias %}
-                                <li>
-                                    <a href="{% url 'blog-categoria' categoria.slug %}">
-                                        {{ categoria.nombre }}
-                                        <span class="f-right">
-                                            <i class="far fa-chevron-right"></i>
-                                        </span>
-                                    </a>
-                                </li>
-                                {% endfor %}
+                               <li>Web Development <span class="f-right"><i class="far fa-chevron-right"></i></span></li>
+                               <li>IT Consulting <span class="f-right"><i class="far fa-chevron-right"></i></span></li>
+                               <li>Product Engineering <span class="f-right"><i class="far fa-chevron-right"></i></span></li>
+                               <li>Product Marketing <span class="f-right"><i class="far fa-chevron-right"></i></span></li>
+                               <li>Education <span class="f-right"><i class="far fa-chevron-right"></i></span></li>
+                               <li>Medical & Health <span class="f-right"><i class="far fa-chevron-right"></i></span></li>
                             </ul>
                         </div>
                         <div class="widget white-bg mb-40 pb-10 wow fadeInUp2 animated" data-wow-delay='.1s'>
