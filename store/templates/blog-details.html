@@ -99,35 +99,17 @@
                                 <p>{{ post.contenido|linebreaks }}</p>
                             </div>
                         </div>
-                        <div class="blogs-details-text mb-35 wow fadeInUp2 animated" data-wow-delay='.1s'>
-                            <h3 class="mb-20">Design & Branding Services</h3>
-                            <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur adipis velit sed quia
-                                non numquam eius modi tempora incidunt labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem</p>
-                            <div class="blogs-details-img mt-35">
-                                <img src="{% static 'img/blog/18.jpg' %}" alt="">
-                            </div>
-                        </div>
-                        <div class="events-details-list mb-15  wow fadeInUp2 animated" data-wow-delay='.1s'>
-                            <h3>Benefits Of Roofing  Solutions</h3>
-                            <p>Voluptatem sequi nesciunt porro quisquam estqui dolorem ipsum quia dolor sit amet consecteturadipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima</p>
-                            <ul class="details-list pt-25">
-                                <li><i class="far fa-check-circle"></i> Understanding Client-Side GraphQl With Apollo-Client In React Apps</li>
-                                <li><i class="far fa-check-circle"></i> Inspired Design Decisions With Emmett McBaise Direction Social Equity</li>
-                                <li><i class="far fa-check-circle"></i> Smashing Podcast Episode 21 With Chris Ferdinandi Practices Bad</li>
-                                <li><i class="far fa-check-circle"></i> Create A Responsive Dashboard With Angular Material And nsCharts</li>
-                            </ul>
-                        </div>
                         <div class="blog-post-text theme-bg2 mb-40 wow fadeInUp2 animated" data-wow-delay='.1s'>
-                            <h4>How To Build An Accessible Frot End Application With Chakra UI And Nuxt.js</h4>
-                            <p><i class="far fa-quote-left"></i> Norman S. Roberts</p>
+                            <h4>{{ post.titulo }}</h4>
+                            <p><i class="far fa-quote-left"></i> {{ post.get_autor_blog_display }}</p>
                         </div>
                         <div class="blog-post-tag wow fadeInUp2 animated" data-wow-delay='.1s'>
                             <div class="row">
                                 <div class="col-xl-6 col-lg-6 col-md-7">
                                     <div class="post-tag-list mb-50">
                                         <span>Tags : </span>
-                                        <a href="#">Business Cart, </a>
-                                        <a href="#">Design & Branding</a>
+                                        <a href="#">Espiritualidad, </a>
+                                        <a href="#">{{ post.categoria.nombre }}</a>
                                     </div>
                                 </div>
                                 <div class="col-xl-6 col-lg-6 col-md-5">
@@ -136,7 +118,6 @@
                                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                                         <a href="#"><i class="fab fa-twitter"></i></a>
                                         <a href="#"><i class="fab fa-youtube"></i></a>
-                                        <a href="#"><i class="fab fa-behance"></i></a>
                                     </div>
                                 </div>
                             </div>
