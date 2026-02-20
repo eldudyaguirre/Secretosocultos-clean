@@ -396,7 +396,7 @@
                             <div class="blogs__thumb pos-rel mb-45">
                                 <div class="blogs__thumb--img">
                                     {% if post.imagen %}
-                                        <img src="{{ post.imagen.url }}" alt="{{ post.titulo }}">
+                                        <img src="{{ post.imagen.url }}" alt="{{ post.titulo }}" style="width:100%; max-width:370px; height:250px; object-fit:cover;">
                                     {% else %}
                                         <img src="{% static 'img/blog/default.jpg' %}" alt="Default">
                                     {% endif %}
