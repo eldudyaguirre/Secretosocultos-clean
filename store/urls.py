@@ -44,6 +44,7 @@ urlpatterns = [
     path('project-video/', views.projectvideo, name='project-video'),
     path('reset-password/', views.resetpassword, name='reset-password'),
     path('boletin/', views.boletin, name='boletin'),
+    path('google/', views.google, name='google'),
     #path('signinnow/', auth_views.LoginView.as_view(template_name='sign-in.html'), name='signinnow'),
     #path('logoutnow/',auth_views.LoginView.as_view(template_name='index.html'), name='logoutnow'),
     #path('sign-up/', views.signupnow, name='sign-up'),

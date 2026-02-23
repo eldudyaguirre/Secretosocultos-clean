@@ -202,6 +202,8 @@ def projectvideo(request):
 def resetpassword(request):
     return render(request, 'reset-password.html')
 
+def google(request):
+    return render(request, 'google5927e33608c6f25e.html')
 
 def tarot(request):
     return render(request, 'tarot.html')
