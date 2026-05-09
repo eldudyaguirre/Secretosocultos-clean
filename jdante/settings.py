@@ -37,7 +37,7 @@ ALLOWED_HOSTS = [
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://secretosocultos.up.railway.app",
+    "https://secretos-ocultos.com",
 ]
 USE_X_FORWARDED_HOST = True
 
