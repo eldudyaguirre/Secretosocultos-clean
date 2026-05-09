@@ -30,10 +30,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    "secretosocultos.up.railway.app",
-    ".railway.app",
-    "localhost",
-    "127.0.0.1",
+    "secretos-ocultos.com",
+    "www.secretos-ocultos.com",
+    ".up.railway.app",
 ]
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 
